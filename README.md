@@ -3,7 +3,8 @@
 ## 프로젝트 소개
 텍스트, 이미지를 통해 특허 검색이 가능한 웹, 앱 개발 시스템
 
-<a> https://www.notion.so/Thunder-Patent-Search-9a506f6218484044a12101888d212238 </a>
+- 개발 Wiki Page
+  - <a> https://www.notion.so/Thunder-Patent-Search-9a506f6218484044a12101888d212238 </a>
 <br><br>
 
 - 전체 플로우
