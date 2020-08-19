@@ -1,234 +1,84 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-
+<html lang="en"> 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <title>⚡Thunder-Patent Search</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>⚡Thunder-Patent Research</title>
-
+    <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="{% static 'fontawesome/js/all.min.js' %}"></script>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-</head>
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/theme.css' %}">
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-    <!-- Hero Section Begin -->
-    <div class="container-fluid h-100"> 
-        <div class="row h-100">
-            <div class="col-lg-2 left-banner h-100">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
-                        <a href="{% url 'index' %}">
-                            <p id="icon">⚡Thunder<br>
-                            patent-search</p>
-                            </a>
-                    </div>
-                    
-                    <ul id="left-banner-manu">
-                        <li>
-                            <div class="site-logo">
-                                <div class="main-menu">
-                                    <div class="radio-btn">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Text
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked> Image
-                                    </label>
-                                    </div>
-                                    <div id="text-search"  style="display:none">
-                                    <form >
-                                        <div class="input-group">
-                                        <input type="text" class="form-control search-bar" id="search-content" placeholder="Search..." width="100%", height="">
-                                        <button class="input-group-addon search-bar" id="search-btn">Search</button>
-                                        </div>
-                                    </form>
-                                    </div>
-                                    <!-- <div id="text-search"  style="display:none" class="hero__search"> 
-                                    <form action="#" class="hero__search__form form-inline">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control search-bar" id="search-content" placeholder="Search..." width="100%", height="">
-                                        <button type="submit" class="site-btn search-bar" id="search-btn">SEARCH</button>
-                                        </div>
-                                    </form>
-                                    </div> -->
-                                    <div id="image-search">
-                                    <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
-                                    <div id="image_container">
-                                        <p id="image_container_text">Drag and Drop your file here...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <div class="footer-email">
-                            <p>Please E-mail us :)<br>abcdef123456@gmail.com</p>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            {% block content %}
-            {% endblock %}
-        </div>
-    </div>
-    <!-- Hero Section End -->   
-    <!-- Footer Section Begin -->
-    <!-- <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- </p></div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    Footer Section End -->
+</head> 
 
-    <!-- Js Plugins -->
-    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
-    <script src="{% static 'js/mixitup.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    <script> function setThumbnail(event) { var reader = new FileReader(); reader.onload = function(event) { var img = document.createElement("img"); img.setAttribute("src", event.target.result); img.setAttribute("style", "width:100%;", "height:100%;"); document.querySelector("div#image_container").appendChild(img); }; reader.readAsDataURL(event.target.files[0]); } 
-  
-        $('#image_container')
-        .on("dragover", dragOver)
-        .on("dragleave", dragOver)
-        .on("drop", uploadFiles);
-      
-        function dragOver(img){
-          img.stopPropagation();
-          img.preventDefault();
-          
-        }
-      
-        function uploadFiles(img) {
-          img.stopPropagation();
-          img.preventDefault();
-          dragOver(img);
-        
-          img.dataTransfer = img.originalEvent.dataTransfer;
-          var files = img.target.files || img.dataTransfer.files;
-          if (files.length > 1) {
-              alert('하나만 올려주세요.');
-              return;
-          }
-          if (files[0].type.match(/image.*/)) {
-                      $(img.target).css({
-                  "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
-                  "outline": "none",
-                  "background-size": "100%"
-              });
-              $('#image_container_text').css({
-                  "display":"none",
-              })
-          }else{
-            alert('이미지가 아닙니다.');
-            return;
-          }
-        }
-        $(document).ready(function(){
+<body>    
+    <header class="header fixed-top">	    
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+	                <div class="site-logo"><a class="navbar-brand" href="{% url 'index' %}"><span class="logo-text">⚡Thunder<span class="text-alt"> - Patent Search</span></span></a></div>    
+                </div><!--//docs-logo-wrapper-->
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center footer-email">
+					<p>Please Mail here :><br>asds238@gmail.com</p>
+	            </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+    
+    
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+	    <!-- <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div> -->
+	    <div class="container search-part">
+		    <h1 class="page-heading single-col-max mx-auto"><span class='text-search' style='display:none'>Text-Search</span><span class='image-search'>Image-Search</span></h1>
+		    <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+		    <div class="main-search-box pt-3 d-block mx-auto">
+                <div class="main-menu">
+                    <div class="radio-btn">
+                      <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Text
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked> Image
+                      </label>
+                    </div>
+                    <div class="text-search"  style="display:none" class="hero__search">
+                      <form class="search-form w-100">
+                        <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                        <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+                    </form>
+                    </div>
+                    <div class="image-search">
+                      <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
+                      <div id="image_container">
+                          <p id="image_container_text">Drag and Drop your file here...</p>
+                    </div>
+                  </div>
+                 
+             </div>
+	    </div>
+    </div><!--//page-header-->
+    
+	{% block content %}
+	{% endblock %}
+    
+    
        
-       // 라디오버튼 클릭시 이벤트 발생
-       $("input:radio[name=inlineRadioOptions]").click(function(){
-      
-           if($("input[name=inlineRadioOptions]:checked").val() == "option1"){
-               $("#text-search").css("display", "");
-               $("#image-search").css("display", "none");
-      
-               // radio 버튼의 value 값이 1이라면 활성화
-      
-           }else if($("input[name=inlineRadioOptions]:checked").val() == "option2"){
-               $("#text-search").css("display", "none");
-               $("#image-search").css("display", "");
-               // radio 버튼의 value 값이 0이라면 비활성화
-            }
-        });
-        });
-        $('.page-item').click(function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        });
-
-        </script>
-
-
+    <!-- Javascript -->          
+    <script src="{% static 'plugins/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'plugins/popper.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>  
+    <script src="{% static 'js/action.js' %}"></script>
 </body>
-
-</html>
+</html> 
