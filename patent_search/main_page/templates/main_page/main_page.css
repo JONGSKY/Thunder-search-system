@@ -1,0 +1,45 @@
+body {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+a:link{ 
+    text-decoration: none;
+}
+.logo-btn i {
+    text-shadow: 3px 3px black;
+}
+
+h1 {
+    margin-top: 203px;
+    font-size: 90px;
+    color: #FFBB00;
+    text-shadow: 1px 1px black;
+}
+
+h2 {
+    margin-left: 10%;
+    font-size: 40px;
+    color: black;
+    text-shadow: 1px 1px black;
+}
+.radio-button {
+    font-size: 20px;
+    margin-left: 20%;
+    margin-top: 40px;
+}
+
+.form-control{
+    padding: 25px;
+}
+.search-bar {
+    width: 600px;
+}
+
+nav {
+    background-color: rgb(206, 206, 206);
+}
