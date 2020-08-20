@@ -1,12 +1,353 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+<title>Thunder/patentsear/text</title>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bootstrap Documentation Template For Software Developers">
+<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- Google Font -->
+<link href='{% static "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" %}' rel="stylesheet">
+<!-- FontAwesome JS-->
+<script defer src='{% static "assets/fontawesome/js/all.min.js" %}'></script>
+<!-- Theme CSS -->
+<link id="theme-style" rel="stylesheet" href='{% static "assets/css/theme.css" %}'>
 </head>
-<body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<body>    
+    <header class="header fixed-top">	    
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+	                <div class="site-logo"><a class="navbar-brand" href="index.html"><i class="fas fa-bolt logo-icon mr-2"></i><span class="logo-text">Thunder</span></a></div>    
+                </div><!--//docs-logo-wrapper-->
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+	
+					<ul class="social-list list-inline mx-md-1 mx-lg-4 mb-0 d-none d-lg-flex">
+                        <li><label for="id1">text search</label></li>
+                        <li> <input type="radio" name="search" id="id1" value="text" checked="checked"></li>
+                        <li><label for="id2">image search</label></li>
+                        <li> <input type="radio" name="search" id="id2" value="image"></li>
+                    </ul>
+                    </div>
+	            </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+	</header><!--//header-->
+	
+	<div class="page-header theme-bg-dark py-5 text-center position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+		    <!-- <h1 class="page-heading single-col-max mx-auto">Documentation</h1> -->
+            <div class="page-intro single-col-max mx-auto">텍스트 검색 시 키워드 중심의 결과를,<br>
+                이미지 검색 시 유사한 이미지의 특허 검색 결과를 확인하실 수 있습니다.</div>
+		    <div class="main-search-box pt-3 d-block mx-auto">
+                 <form class="search-form w-100">
+		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+		        </form>
+             </div>
+             <div class="single-col-max mt-4 mx-auto">
 
-</body>
-</html>
+             <ul class="list-group-list-group-horizontal">
+                 <!-- <li class="pr-4"><br>연관검색어</li> -->
+                 <li><a class="list-group-item word1" href="#">연관검색어 1</a></li>
+                 <li><a class="list-group-item word2" href="#">연관검색어 2</a></li>
+                 <li><a class="list-group-item word3" href="#">연관검색어 3</a></li>
+                 <li><a class="list-group-item word4" href="#">연관검색어 4</a></li>
+            
+             </ul>
+             </div>
+             </div>
+	    </div>
+    </div><!--//page-header-->
+<div class="page-content">
+	<div class="container">
+		<div class="container">
+			<div class="row-d-flex">
+				<div class="col-xl-8-py-5-px-md-5">
+					<div class="patent_landscape"><img src='{% static "assets/images/landscape_example.png" %}' alt="patent_landscape"> </div>
+					<div class="row pt-md-4">
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/patent_example.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/patent_example.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/patent_example.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/patent_example.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/patent_example.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="blog-entry-ftco-animated-md-flex">
+								<a href="#" class="img img-2" ><img src='{% static "assets/images/image_1.jpg" %}' alt="patent_image"></a>
+								<div class="text text-2 pl-md-4">
+									<h3 class="mb-2"><a href="#">Patent_name</a></h3>
+									<p class="mb-4">
+										Brief description of patent
+									</p>
+									<div class="meta-wrap">
+										<p class="meta">
+											<span><i class="icon-calendar mr-2"></i>August 20, 2020</span>
+											<span><a href="#"><i class="icon-folder-o mr-2"></i>Category</a></span>
+											<span><i class="icon-comment2 mr-2"></i>N views</span>
+										</p>
+									</div>
+									<p>
+										<a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END-->
+					<div class="row">
+						<div class="col">
+							<div class="block-27">
+								<ul>
+									<li><a href="#">&lt;</a></li>
+									<li class="active"><span>1</span></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#">&gt;</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Javascript -->
+		<script src='{% static "assets/plugins/jquery-3.4.1.min.js" %}'></script>
+		<script src='{% static "assets/plugins/popper.min.js" %}'></script>
+		<script src='{% static "assets/plugins/bootstrap/js/bootstrap.min.js" %}'></script>
+		</body>
+		</html>
