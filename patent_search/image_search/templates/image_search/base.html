@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>⚡Thunder-Patent Search</title>
+    <title>Thunder-Patent Search</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bootstrap Documentation Template For Software Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
     
@@ -41,7 +41,7 @@
 	    <!-- <div class="theme-bg-shapes-right"></div>
 	    <div class="theme-bg-shapes-left"></div> -->
 	    <div class="container search-part">
-		    <h1 class="page-heading single-col-max mx-auto"><span class='text-search' style='display:none'>Text-Search</span><span class='image-search'>Image-Search</span></h1>
+		    <h1 class="page-heading single-col-max mx-auto"><span class="text-search" style="display:none">Text-Search</span><span class="image-search">Image-Search</span></h1>
 		    <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
 		    <div class="main-search-box pt-3 d-block mx-auto">
                 <div class="main-menu">
@@ -60,15 +60,19 @@
                     </form>
                     </div>
                     <div class="image-search">
-                      <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
                       <div id="image_container">
-                          <p id="image_container_text">Drag and Drop your file here...</p>
+                          <p id="image_container_text"><img src="{% static 'img/upload.png' %}" alt="upload"><br><br>Drag and Drop your file here...</p>
+                      </div>
+                      <div class="upload">
+                      <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);">
+                      <p class="upload-btn">File Upload</p>
+                      </div>
+                      <button type="button" class="search_btn">Search</button>
                     </div>
-                  </div>
-                 
-             </div>
-	    </div>
-    </div><!--//page-header-->
+                    
+                </div>
+        </div>
+      </div><!--//page-header-->
     
 	{% block content %}
 	{% endblock %}
