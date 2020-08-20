@@ -1,12 +1,58 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+        <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+        <link rel="shortcut icon" href="favicon.ico"> 
+        {% load static %}
+        
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        <script defer src="{%static "fontawesome/js/all.min.js" %}"></script>
+        <script defer src="{% static "js/main_page.js" %}"></script>
+    
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="{%static "css/theme.css" %}">
+
+    <title>{% block title %}⚡Thunder-Patent Search{% endblock %}</title>
+
 </head>
+
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <div class="page-header py-2 text-center position-relative">
+    <div class="container">
+
+      <div class="site-logo"><a class="navbar-brand" href="index.html"><span class="logo-text">⚡Thunder<br>
+        <span class="text-alt">Patent search</span></span></a></div>    
+                </div>
+
+        <div class="radio-button">
+          <label for="id1">text</label> <input type="radio" name="search" id="id1" value="text" checked="checked">
+          <label for="id2">image</label> <input type="radio" name="search" id="id2" value="image">
+      </div>
+
+		    <div class="main-search-box pt-3 d-block mx-auto">
+                 <form class="search-form w-100">
+		            <input type="text" placeholder="Search ..." name="search" class="form-control search-input">
+		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+		        </form>
+             </div><br>
+             <div class="page-intro single-col-max mx-auto">
+              텍스트 검색 시 키워드 중심 결과 / 이미지 검색 시 유사한 이미지의 특허 검색 결과 확인
+            </div>
+            </div>
+
+        <nav class="footer navbar-dark">
+          문의사항
+        </nav>
 
 </body>
 </html>
