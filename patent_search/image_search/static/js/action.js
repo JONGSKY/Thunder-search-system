@@ -1,11 +1,27 @@
-function setThumbnail(event) {
+function setThumbnail(events) {
     var reader = new FileReader();
     reader.onload = function(event) {
+        $('#image_container').html('');
         var img = document.createElement("img");
+        img.setAttribute("id", "innerImg");
         img.setAttribute("src", event.target.result);
-        img.setAttribute("style", "width:100%;", "height:100%;");
+        img.setAttribute("style", "height:90%;");
         document.querySelector("div#image_container").appendChild(img);
+        $('#image_container').css({
+            'outline':'none',
+        });
+        $('#image_container').css({
+            'background-color' : '#28b76b',
+            'border' : 'none',
+            'outline':'none',
+        });
+        var imgName = document.createElement("p");
+        document.getElementById("image_container").appendChild(imgName);
+        imgName.setAttribute('style', 'font-size:12px');
+        imgName.setAttribute('id', 'imgTitle');
+        $('#imgTitle').text(events.target.files[0].name);
     };
+    
     reader.readAsDataURL(event.target.files[0]);
 }
 $('#image_container')
@@ -31,14 +47,29 @@ function uploadFiles(img) {
         return;
     }
     if (files[0].type.match(/image.*/)) {
-                $(img.target).css({
-            "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
-            "outline": "none",
-            "background-size": "100%"
-        });
-        $('#image_container_text').css({
-            "display":"none",
-        })
+            var addImg = document.getElementById("image_container");
+            var img = document.createElement("img");
+            $('#image_container').html('');
+            img.setAttribute('id','innerImg');
+            img.setAttribute('src', window.URL.createObjectURL(files[0]));
+            addImg.appendChild(img);
+            $('#innerImg').css({
+                'height':'90%',
+            })
+            $('#image_container').css({
+                'background-color' : '#28b76b',
+                'border' : 'none',
+                'outline':'none',
+            });
+            $('#image_container_text').css({
+                'display':'none',
+            });
+            var imgName = document.createElement("p");
+            addImg.appendChild(imgName);
+            imgName.setAttribute('style', 'font-size:12px');
+            imgName.setAttribute('id', 'imgTitle');
+            $('#imgTitle').text(files[0].name);
+            
     }else{
     alert('이미지가 아닙니다.');
     return;
@@ -52,7 +83,6 @@ $("input:radio[name=inlineRadioOptions]").click(function(){
     if($("input[name=inlineRadioOptions]:checked").val() == "option1"){
         $(".text-search").css("display", "");
         $(".image-search").css("display", "none");
-
         // radio 버튼의 value 값이 1이라면 활성화
 
     }else if($("input[name=inlineRadioOptions]:checked").val() == "option2"){
