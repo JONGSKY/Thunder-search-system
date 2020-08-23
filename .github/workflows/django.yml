@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./patent_search
+      working-directory: ./app
     strategy:
       max-parallel: 4
       matrix:
