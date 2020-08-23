@@ -3,7 +3,7 @@
 ## What is the project
 [Notion - 프로젝트 관리](https://www.notion.so/Thunder-Patent-Search-9a506f6218484044a12101888d212238)
 
-  - 🔍 텍스트와 그림으로 검색 가능한 특허 검색 시스템 개발
+🔍 텍스트와 그림으로 검색 가능한 특허 검색 시스템 개발
 
 ## How to work on a collaborative project 
 [우리가 지켜야할 규칙](https://www.notion.so/344b8663a4a145bd93a55aff033aceac) & [Github 협업, 우린 TEAM 이다](https://www.notion.so/Github-TEAM-c1ab4efd83cf497cbc6c1fa187ead2d5)
