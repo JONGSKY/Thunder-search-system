@@ -12,7 +12,8 @@
   3. 생성한 Branch에서 ISSUE에 해당하는 작업 진행
   4. 자신의 Repo에 commit 및 push
   5. 공용 Repo에 PR 요청 (Reviwers, Labels 등 포함, 템플릿 따라 작성)
-  6. 종료된 ISSUE, PR은 comment와 함께 Close
+  6. Review 이후 Merge 완료 (수정 필요시 4번으로 다시 이동)
+  7. 종료된 ISSUE, PR은 comment와 함께 Close
 
 ## How to run Docker
   - docker-compose.yml 파일의 이미지를 빌드 및 실행한다.
