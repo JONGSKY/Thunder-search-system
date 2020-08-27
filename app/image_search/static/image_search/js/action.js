@@ -98,10 +98,12 @@ $(this).addClass('active').siblings().removeClass('active');
 
 $(document).ready(function(){
     $(".thumbnail-img").each(function (index, img){
-        if($(img).width() > $(img).height()){
-            $(img).addClass("thumbnail-width");
-        }else{
+        if($(img).width() < $(img).height()){
             $(img).addClass("thumbnail-height");
+        }else if($(img).width() > $(img).height()){
+            $(img).addClass("thumbnail-width");
+        }else {
+            $(img).addClass("thumbnail-width");
         }
     })
     

@@ -222,10 +222,14 @@ a.theme-link:hover {
 .site-logo .navbar-brand {
 	font-size:2rem;
 	font-weight:600;
-	padding-top:0
+	padding-top:0;
+	margin : 0px;
+}
+.page-header {
+	padding-top : 51px;
 }
 .page-header.theme-bg-dark .page-heading {
-    color:#fff;
+    color: #fff;
     border-bottom : 1px solid white;
 }
 .page-header.theme-bg-dark .page-intro {
@@ -327,6 +331,7 @@ a.theme-link:hover {
 	box-shadow:none
 }
 .docs-branding {
+	text-align : center;
 	min-height:69px
 }
 .docs-branding .top-search-box {
@@ -338,7 +343,7 @@ a.theme-link:hover {
 	top:0.5rem
 }
 .docs-logo-wrapper .site-logo {
-	display:inline-block
+	display:inline-block	
 }
 .docs-top-utilities {
 	padding-top:4px
@@ -609,6 +614,10 @@ a.theme-link:hover {
 	.docs-article .section-heading {
 		font-size:1.5rem
 	}
+	#image_container {
+		display : none;
+	}
+	
 }
 @media (max-width:1199.98px) {
 	.docs-content {
@@ -630,8 +639,15 @@ a.theme-link:hover {
 	margin-left : 10px;
 }
 #image {
+	position : absolute;
+	top : 50%;
+	left : 50%;
+	transform : translate(-50%, -50%);
 	width : 100%;
-}
+	padding : 10px 0;
+	opacity : 0;
+	cursor: pointer;
+  }
 .left-banner {
 	padding : 0 !important;
 	height : 100%;
@@ -710,9 +726,15 @@ a.theme-link:hover {
     font-size : 13px;
     color : black;
 	text-align : center;
+	width : 100%
 }
 .footer-email p {
-  margin : 5px 20px 5px 0;
+	font-size : 15px;
+	color : white ;
+	margin : 5px 0 5px 0;
+}
+.footer_row {
+	justify-content : center;
 }
 
 .pagination {
@@ -747,7 +769,7 @@ a.theme-link:hover {
 
 .thumbnail-height{
 	position : absolute;
-	height : 218px;;
+	height : 100%;
 	width: auto;
 	left: 50%;
 	top: 50%;
@@ -756,7 +778,16 @@ a.theme-link:hover {
 .thumbnail-width{
 	position : absolute;
 	height : auto;
-	width : 225.5px;
+	width : 100%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-height : 100%;
+}
+.thumbnail-square{
+	position : absolute;
+	height : auto;
+	width : auto;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -779,7 +810,7 @@ a.theme-link:hover {
 }
 
 .upload {
-	position :relative;
+	position : relative;
 	color : white;
 	width : 100%;
 	margin : 10px 0;
@@ -792,15 +823,19 @@ a.theme-link:hover {
 	text-align: center;
 	padding : 0;
 }
-#image {
-	padding : 10px 0;
-	opacity : 0;
-  }
+
 .upload-btn{
-	position : absolute;
-	top : 50%;
-	left : 50%;
-	transform : translate(-50%, -50%);
+	position : relative;
+	display: block;
+	color : white;
+	width: 100%;
+	border: none;
+	border-radius : 10px;
+	background-color: #4CAF50;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: center;
 }
 .card-text {
 	font-size : 14px;
