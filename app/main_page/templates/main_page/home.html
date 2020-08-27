@@ -1,0 +1,60 @@
+{% extends 'main_page/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="s010">
+  <form>
+    <div class="inner-form">
+      <div class="basic-search">
+        <div class="page-header theme-bg-dark text-center position-relative">
+          <div class="container search-part">
+          <h1 class="page-heading single-col-max mx-auto">
+            <span class="text-search">Text Search</span>
+            <span class="image-search" style="display:none">Image Search</span>
+          </h1>
+          <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation
+            online.</div>
+          <div class="main-search-box pt-3 d-block mx-auto">
+            <div class="main-menu">
+              <div class="radio-btn">
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
+                  Text
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  Image
+                </label>
+              </div>
+              <div class="text-search">
+                <form class="search-form w-100">
+                  <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                  <!-- <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button> -->
+              </form>
+              </div>
+              <div class="image-search" style="display:none">
+                <div id="image_container">
+                  <p id="image_container_text">
+                    <img src="{% static 'main_page/img/upload.png' %}" alt="upload">
+                    <br>
+                    <br>Drag and Drop your file here...</p>
+                </div>
+                <div class="upload">
+                  <p class="upload-btn">File Upload</p>
+                  <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);">
+                </div>
+                <button type="button" class="search_btn">Search</button>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <!--//page-header-->
+
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
