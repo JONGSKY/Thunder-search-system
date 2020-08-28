@@ -1,770 +1,328 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+  <head>
+    <title>Thunder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href= '{ % static "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700 display=swap" % }' rel="stylesheet">
+	<link rel="stylesheet" href= '{ % static "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/open-iconic-bootstrap.min.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/animate.css" % }'>
+    
+    <link rel="stylesheet" href= '{ % static "css/owl.carousel.min.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/owl.theme.default.min.css" %}'>
+    <link rel="stylesheet" href= '{ % static "css/magnific-popup.css" % }'>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <link rel="stylesheet" href= '{ % static "css/aos.css" % }'>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= '{ % static "css/ionicons.min.css" % }'>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/font-awesome.min.css"%}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/elegant-icons.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/nice-select.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/jquery-ui.min.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/owl.carousel.min.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/slicknav.min.css" %}' type="text/css">
-    <link rel="stylesheet" href='{% static "css/style.css" %}' type="text/css">
-</head>
+    <link rel="stylesheet" href= '{ % static "css/bootstrap-datepicker.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/jquery.timepicker.css" % }'>
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src='{% static "img/logo.png" %}' alt=""></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src='{% static "img/language.png" %}' alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
+    
+    <link rel="stylesheet" href= '{ % static "css/flaticon.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/icomoon.css" % }'>
+    <link rel="stylesheet" href= '{ % static "css/style.css" % }'>
+  </head>
+  <body>
+	<header class="header fixed-top">	    
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+	                <div class="site-logo"><a class="navbar-brand" href='{ % static"index.html" %}'><span class="logo-text">⚡Thunder<span class="text-alt"> - Patent Search</span></span></a></div>    
             </div>
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        
-    </div>
-    <!-- Humberger End -->
-
-    <!-- Header Section Begin -->
-    <!-- <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src='{% static "img/language.png" %}' alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src='{% static "img/Thunder_logo.png" %}' alt=""></a>
-                    </div>
-                <!-- </div>
-                 <div class="col-lg-6">
-                   <!-- <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>-->
         </div>
     </header>
-    <!-- Header Section End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Search Option</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#"><input type="text" placeholder="Everything you want">
-                                <button type="submit" class="site-btn">SEARCH</button></a></li>
-                        </ul>
+    
+    <div class="page-header theme-bg-dark py-5 text-center position-relative">
+
+	    <div class="container-search-part">
+		    <h1 class="page-heading single-col-max mx-auto"><span class="text-search" >Text-Search</span><span class="image-search" style="display:none">Image-Search</span></h1>
+		    <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+		    <div class="main-search-box pt-3 d-block mx-auto">
+                <div class="main-menu">
+                    <div class="radio-btn">
+                      <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Text
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked> Image
+                      </label>
+                    </div>
+
+                    <div class="main-search-box pt-3 d-block mx-auto">
+                        <form class="search-form w-100">
+                           <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                           <button type="submit" class="btn search-btn" value="Search"><i class="fa fa-search"></i></button>
+                       </form>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            Landscape
-                            <!-- <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form> -->
-                        </div>
-                         <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="hero__item set-bg" data-setbg='{% static "img/landscape_ex.png" %}'>
-                        <!-- <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
+		</div><br>
+		
+        <div class="related_word">
+          연관검색어
+          <ul>
+            <li><a class="word1" href= '{ % static "#" %}'>Airpod</a></li>
+            <li><a class="word2" href= '{ % static "#" %}'>Iphone</a></li>
+            <li><a class="word3" href= '{ % static "#" %}'>Apple Pencil</a></li>
+            <li><a class="word4" href= '{ % static "#" %}'>Ipod Touch</a></li>
+          </ul>
         </div>
-    </section>
-    <!-- Hero Section End -->
+	</div>
 
-    <!-- Categories Section Begin -->
-    <!-- <section class="categories">
-        <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg='{% static "img/categories/cat-1.jpg" %}'>
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg='{% static "img/categories/cat-2.jpg" %}'>
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg='{% static "img/categories/cat-3.jpg" %}'>
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg='{% static "img/categories/cat-4.jpg" %}'>
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg='{% static "img/categories/cat-5.jpg" %}'>
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Categories Section End -->
+	<div id="colorlib-page">
+		<div id="colorlib-main">
+			<div class="ftco-section ftco-no-pt ftco-no-pb">
+	    		<div class="container">
+	    			<div class="row d-flex">
+	    				<div class="col-xl-8 py-5 px-md-5">
+							<div class="landscape">
+								<img src= '{ % static "images/image_2.png" %}' alt="landscape">
+							</div class="landscape">
+	    					<div class="row pt-md-4">
+			    				<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Featured Section Begin -->
-    <section class="featured spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Featured Product</h2>
-                    </div>
-                    <div class="featured__controls">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-1.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-2.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-3.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-4.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-5.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-6.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-7.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg='{% static "img/featured/feature-8.jpg" %}'>
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Featured Section End -->
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Banner Begin -->
-    <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src='{% static "img/banner/banner-1.jpg" %}' alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src='{% static "img/banner/banner-2.jpg" %}' alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner End -->
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Latest Product Section Begin -->
-    <section class="latest-product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Latest Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Top Rated Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
-                        <h4>Review Products</h4>
-                        <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-1.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-2.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src='{% static "img/latest-product/lp-3.jpg" %}' alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Latest Product Section End -->
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Blog Section Begin -->
-    <section class="from-blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title from-blog__title">
-                        <h2>From The Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src='{% static "img/blog/blog-1.jpg" %}' alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src='{% static "img/blog/blog-2.jpg" %}' alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src='{% static "img/blog/blog-3.jpg" %}' alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Visit the clean farm in the US</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src='{% static "img/logo.png" %}' alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src='{% static "img/payment-item.png" %}' alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
 
-    <!-- Js Plugins -->
-    <script src= '{% static "js/jquery-3.3.1.min.js" %}'></script>
-    <script src='{% static "js/bootstrap.min.js" %}'></script>
-    <script src='{% static "js/jquery.nice-select.min.js" %}'></script>
-    <script src='{% static "js/jquery-ui.min.js" %}'></script>
-    <script src='{% static "js/jquery.slicknav.js" %}'></script>
-    <script src='{% static "js/mixitup.min.js" %}'></script>
-    <script src='{% static "js/owl.carousel.min.js" %}'></script>
-    <script src='{% static "js/main.js" %}'></script>
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}'>patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}'><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}' class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href= '{ % static "#" %}' class="img img-2" style="background-image: url('{ % static images/image_1.jpg % }');"></a>
+										<div class="text text-2 pl-md-4">
+				            				<h3 class="mb-2"><a href= '{ % static "#" %}' >patent name</a></h3>
+				            				<div class="meta-wrap">
+												<p class="meta">
+				              					<span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+				              					<span><a href= '{ % static "#" %}' ><i class="icon-folder-o mr-2"></i>Category</a></span>
+				              					<span><i class="icon-comment2 mr-2"></i>5 Views</span>
+				              					</p>
+			              					</div>
+				              				<p class="mb-4">Brief description of patent</p>
+				              				<p><a href= '{ % static "#" %}'  class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+				            			</div>
+									</div>
+								</div>
+			    			<div class="row">
+								<div class="col">
+									<ul class="pagination">
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' ><</a></li>
+										<li class="page-item active"><a class="page-link" href= '{ % static "#" %}' >1</a></li>
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' >2</a></li>
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' >3</a></li>
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' >4</a></li>
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' >5</a></li>
+										<li class="page-item"><a class="page-link" href= '{ % static "#" %}' >></a></li>
+									</ul>
+								</div>
+							</div>
+	    				</div>
+					</div>
+				</div>
+	    	</div>
+		</div>
+	</div>
+
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-
+  <script src= '{ % static "js/jquery.min.js" %}'></script>
+  <script src= '{ % static "js/jquery-migrate-3.0.1.min.js" %}'></script>
+  <script src= '{ % static "js/popper.min.js" %}'></script>
+  <script src= '{ % static "js/bootstrap.min.js" %}'></script>
+  <script src= '{ % static "js/jquery.easing.1.3.js" %}'></script>
+  <script src= '{ % static "js/jquery.waypoints.min.js" %}'></script>
+  <script src= '{ % static "js/jquery.stellar.min.js" %}'></script>
+  <script src= '{ % static "js/owl.carousel.min.js" %}'></script>
+  <script src= '{ % static "js/jquery.magnific-popup.min.js" %}'></script>
+  <script src= '{ % static "js/aos.js" %}'></script>
+  <script src= '{ % static "js/jquery.animateNumber.min.js" %}'></script>
+  <script src= '{ % static "js/scrollax.min.js" %}'></script>
+  <script src= '{ % static "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false" %}'></script>
+  <script src= '{ % static "js/google-map.js" %}'></script>
+  <script src= '{ % static "js/main.js" %}'></script>
+    
 </body>
+
+<footer class="footer-email">
+	<p class="email-info">Please Mail here :> asds238@gmail.com</p>
+</footer>
 
 </html>
