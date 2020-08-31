@@ -27,6 +27,5 @@
 
 ## Who is the developer
 - [이종호](https://github.com/JONGSKY)
-- [김서영](https://github.com/ksysy)
 - [박상우](https://github.com/SangWoo9734)
 - [조석영](https://github.com/quartzC)
