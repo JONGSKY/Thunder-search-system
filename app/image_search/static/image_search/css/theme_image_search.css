@@ -882,12 +882,6 @@ a.theme-link:hover {
   overflow-x: hidden;
   padding-right:0 !important;
 }
-@media (max-width : 499px){
-  .modal-content {
-	width : 95% !important; 
-	height : 90%;
-  }
-}
 
 .btn-modal{
   color: #28b76b;
@@ -955,4 +949,17 @@ margin-top : 10px
 	  width: 100%;
 	  height : 90%;
 	  margin-bottom : 10px;
-  }
+}
+
+@media (max-width : 499px){
+.modal-content {
+	width : 95% !important; 
+	height : 90%;
+}
+.detail-image {
+	position : relative;
+	  width: 100%;
+	  height : 220px;
+	  margin-bottom : 10px;
+}
+}
