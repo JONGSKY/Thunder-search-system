@@ -884,7 +884,8 @@ a.theme-link:hover {
 }
 @media (max-width : 499px){
   .modal-content {
-    width : 95% !important; 
+	width : 95% !important; 
+	height : 90%;
   }
 }
 
