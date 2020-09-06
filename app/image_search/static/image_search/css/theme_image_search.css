@@ -874,7 +874,6 @@ a.theme-link:hover {
 }
 .modal-content {
   width : 50% !important;
-  height : 70%;
   position: fixed;
   left : 50%;
   top : 50%;
