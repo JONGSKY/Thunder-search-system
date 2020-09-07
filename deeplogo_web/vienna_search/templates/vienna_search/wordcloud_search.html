@@ -1,0 +1,211 @@
+{% extends 'search/index.html' %}
+{% load static %}
+
+{% block search %}
+<style>
+     text:hover {
+        stroke: black;
+    }
+    form {
+
+        margin: 0 auto;
+
+    }
+</style>
+
+<header id='head' class="masthead"></header>
+
+    <div class="container">
+
+      <br><br>
+    <div class="row text-center" style="width: 100%">
+      <form id='submit_page_1' class="form-inline mr-auto" action="{% url 'text_search_1' %}" method="get">
+        <input class="form-control mr-sm-2 text-center"  name="keyword" id="search_keyword" type="text" value="{{search_keyword}}"
+                placeholder="검색하고 싶은 키워드를 입력해주세요" style="width:500px" aria-label="Search">
+        <button id="button_submit" class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Wordcloud   <i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+    <br>
+
+    <div>
+        <center>
+          <div id="keyword_list" class="form-inline form-group row text-center"></div>
+          <div id="wordcloud"></div>
+        </center>
+    </div>
+
+    <div class="row text-center" style="width: 100%">
+        <form id='submit_page_2' action="{% url 'text_search_2' %}" method="get">
+            <input tpye="text" name="final_keyword" id="final_search_keyword"  value="" style="display:none;"/>
+            <button id="final_search_button" type="submit" class="btn btn-primary"> 현재 키워드들로 검색하기 </button>
+        </form>
+    </div>
+
+
+    </div>
+
+<!--메뉴바 정리-->
+<script>
+$(function(){
+  $('#home').attr("href", "{% url 'search' %}");
+  $("li").remove("#About, #Services, #Portfolio, #Contact");
+<!--  $("#head.masthead").css('background','linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url(../img/bg-masthead.jpg)');-->
+<!--  $("#head.masthead").css('background','#746962');-->
+  $("#mainNav").css({'background':'#746962'});
+  $("#head.masthead").css({'height': 0, 'min-height':0, 'background':'#746962'});
+});
+</script>
+
+<!--wordcloud를 만들 수 없을 때-->
+<script>
+$( document ).ready(function() {
+    if ("{{myWords}}" == "[]"){
+        alert(' 죄송합니다. \n 해당 검색어로는 wordcloud 제작이 어렵습니다! \n 다른 검색어로 검색해주세요');}
+    else {}
+    });
+</script>
+
+<!--검색 키워드 없을 때 -->
+<script>
+$('#final_search_button').click(function(){
+    var search_keyword = $('#search_keyword').val();
+    if (search_keyword == ""){
+        alert('검색어를 입력 후 검색해주세요!');
+        $("#submit_page_2").attr("action", "{% url 'vienna_search' %}");}
+    else {}
+    });
+$('#button_submit').click(function(){
+    var search_keyword = $('#search_keyword').val();
+    if (search_keyword == ""){
+        alert('검색어를 입력 후 검색해주세요!');
+        $("#submit_page_1").attr("action", "{% url 'vienna_search' %}");}
+    else {}
+    });
+
+</script>
+
+<!--추가 검색어 가져와서 최종검색에 입력-->
+<script>
+$('#final_search_button').click(function(){
+    var final_search_keyword = $('#search_keyword').val();
+
+    $("input[name=add_keyword]").each(function(idx){
+        var add_keyword = " and " + $("input[name=add_keyword]:eq(" + idx + ")").val() ;
+        final_search_keyword = final_search_keyword + add_keyword
+});
+    $('#final_search_keyword').val(final_search_keyword);
+});
+</script>
+
+<!--추가 검색어 삭제하고 워드클라우드 다시 그리기-->
+<script>
+    $('body').on("click", ".div_add_keyword", function(){
+        $(this).parent("div").remove();
+
+        var text_val = $('#final_search_keyword').val();
+
+        var del_val = $(this).parent("div").children("input").attr('value');
+
+<!--        wordcloud 다시만들기-->
+        $("#cloud_s").remove();
+
+        myWords.push({word:del_val, size: "40"})
+
+        var layout = d3.layout.cloud()
+            .size([width, height])
+            .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+            .padding(5)        //space between words
+            .rotate(function() { return ~~(Math.random() * 2) * 90; })
+            .fontSize(function(d) { return d.size; })      // font size of words
+            .on("end", draw);
+        layout.start();
+    });
+</script>
+
+<script>
+
+// List of words
+var myWords = [{% for keyword in myWords %}
+{word: "{{keyword.0}}", size: 60-{{forloop.counter}}*1.5},
+        {% endfor %}]
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = 450 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#wordcloud").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("id", "wordcloud_svg")
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+// Wordcloud features that are different from one word to the other must be here
+var layout = d3.layout.cloud()
+  .size([width, height])
+  .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+  .padding(5)        //space between words
+  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+  .fontSize(function(d) { return d.size; })      // font size of words
+  .on("end", draw);
+layout.start();
+
+// This function takes the output of 'layout' above and draw the words
+// Wordcloud features that are THE SAME from one word to the other can be here
+function draw(words) {
+  svg
+    .append("g")
+      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+      .attr("id", "cloud_s")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size; })
+        .style("fill", "#69b3a2")
+        .attr("text-anchor", "middle")
+        .style("font-family", "Impact")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; })
+        .on("click", function(d){
+
+                var ctr = d.text + " X";
+                var keyword_tag = '<div class="col-xs-2 form-inline add_keyword_group"><input name="add_keyword" class="form-control keywords" style="background-color:#D9E5FF; color:#6799FF; margin:10px 5px 10px 5px" type="text" value=' + ctr +'><div class="input-group-btn div_add_keyword"><button class="btn btn-primary button_add_keyword" type="submit"><i class="fa fa-times"></i></button></div>'
+
+
+<!--                var keyword_tag = "<input type='text' name='add_keyword' class='keywords' style='background-color:#D9E5FF; color:#6799FF; margin:10px 5px 10px 5px' value='" + ctr + "'/>";-->
+                $('#keyword_list').append(keyword_tag);
+
+<!--                var text_val = $('#final_search_keyword').val();-->
+<!--                text_val = text_val + " and " + d.text;-->
+<!--                $('#final_search_keyword').val(text_val);-->
+
+                $("#cloud_s").remove();
+
+                for(var i in myWords){
+                    if(myWords[i].word==d.text){
+                        myWords.splice(i,1);}
+                    }
+
+                var layout = d3.layout.cloud()
+                  .size([width, height])
+                  .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+                  .padding(5)        //space between words
+                  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+                  .fontSize(function(d) { return d.size; })      // font size of words
+                  .on("end", draw);
+                layout.start();
+                })
+            ;
+
+}
+</script>
+
+
+{% endblock %}

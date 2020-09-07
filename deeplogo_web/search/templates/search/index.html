@@ -1,0 +1,90 @@
+{% extends 'search/base.html' %}
+{% load static %}
+
+{% block index_navbar %}
+<li id="About" class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#main">About</a>
+</li>
+<li id="Services" class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+</li>
+<li id="Contact" class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+</li>
+{% endblock %}
+
+{% block main_page %}
+<!-- Font Awesome Icons -->
+<!--<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">-->
+
+<header class="masthead" id="main">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-white">Scientific Data Product</h1>
+                        <h3 class="text-white-75">Big Data Intelligence Information System</h3>
+                        <hr class="divider my-4">
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75">This service was developed at the Department </br> of Industrial Management Engineering, Gachon University.</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Find Out More</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Services Section -->
+<section class="page-section" id="services">
+    <div class="container">
+        <h2 class="text-center mt-0">Data Product Service</h2>
+        <hr class="divider my-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 text-center">
+                <div class="mt-5">
+                    <a>
+                        <img src="{% static 'search/img/patent.png' %}" class="img-rounded" alt="Cinque Terre">
+                    </a>
+                    <h3 class="h3 mb-2">LaSPAM</h3>
+                    <p class="text-muted mb-0">By building database of Patent View's information,<br/>It provides various search results for patents that users want.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 text-center">
+                <div class="mt-5">
+                    <a href="{% url 'trademark' %}" >
+                        <img src="{% static 'search/img/trademark.png' %}" class="img-rounded" alt="Cinque Terre">
+                    </a>
+                    <h3 class="h3 mb-2">DTS</h3>
+                    <p class="text-muted mb-0">By building database of Korea Trademark information,<br/>It provides various search results for trademarks that users want.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0">Contact us!</h2>
+                <hr class="divider my-4">
+                <p class="text-muted mb-5">About Data Product</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                <!-- <i class="fas fa-git fa-3x mb-3 text-muted"></i> -->
+                <i class="fab fa-git fa-3x mb-3 text-muted"></i>
+                <a target="_blank" class="d-block" href="https://github.com/TeamLab/">https://github.com/TeamLab</a>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <!-- Make sure to change the email address in anchor text AND the link below! -->
+                <a target="_blank" class="d-block" href="mailto:teamlab.gachon@gmail.com?subject=&body=">teamlab.gachon@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
