@@ -1,0 +1,131 @@
+{% extends 'search/base.html' %}
+{% load static %}
+
+{% block javasrcipt %}
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.js"></script>
+
+    <script src="{% static 'text_search/wordcloud.js' %}"></script>
+    <script src="{% static 'text_search/text_result_2.js' %}"></script>
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.2.2/css/responsive.dataTables.min.css">
+
+    <link href="{% static 'text_search/style.css' %}" rel="stylesheet">
+
+
+    <style>
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer {
+            height: 115px;
+        }
+
+        td.details-control {
+            background: url("{% static 'text_search/details_image/details_open.png' %}") no-repeat center center;
+            cursor: pointer;
+        }
+
+        tr.details td.details-control {
+            background: url("{% static 'text_search/details_image/details_close.png' %}") no-repeat center center;
+        }
+
+        text:hover {
+            stroke: black;
+        }
+    </style>
+{% endblock %}
+
+{% block home_url %}
+    <a id='home' class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">Patent Search</a>
+{% endblock %}
+
+{% block main_page %}
+    <section class="page-section bg-dark text-white" id="search">
+        <br>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">Patent Text Search</h2>
+                    <hr class="divider light my-4">
+                    <br>
+                    <div class="row text-center">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control text-center" placeholder="검색 키워드를 입력해주세요"
+                                   aria-label="search_keyword" id="search_keyword" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button id="submit_keyword" class="btn btn-outline-secondary" type="button"> WordCloud
+                                    <i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="keyword_list" class="form-inline form-group row text-center"></div>
+                    <div class="container">
+                        <button id="search_patent" type="button" class="btn btn-primary"> 현재 키워드들로 검색하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="wordcloud_section" style="display: none;">
+        <div class="container">
+            <h2 class="text-center mt-0">WordCloud</h2>
+            <hr class="divider my-4">
+            <div class="col-sm-1 col-md-2"></div>
+            <div id="wordcloud" class="container col-sm-9, col-md-8">
+                <svg id="wordcloud_svg"></svg>
+            </div>
+            <div class="col-sm-1 col-md-2"></div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="result_section" style="display: none;">
+
+        <div class="container">
+            <h2 class="text-center mt-0">Clustering</h2>
+            <hr class="divider my-4">
+            <div class="col-sm-1 col-md-2"></div>
+            <div id="my_dataviz" class="container col-sm-9, col-md-8"></div>
+            <div class="col-sm-1 col-md-2"></div>
+        </div>
+
+        <div id='result_div' class="container">
+            <h2 class="text-center mt-0">Results</h2>
+            <hr class="divider my-4">
+
+            <table id="result_table" class="display" style="width:100%">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>patent_id</th>
+                    <th>title</th>
+                    <th>country</th>
+                    <th>date</th>
+                    <th>site</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th>patent_id</th>
+                    <th>title</th>
+                    <th>country</th>
+                    <th>date</th>
+                    <th>site</th>
+                </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </section>
+
+    <div id='footer'></div>
+{% endblock %}
