@@ -1,0 +1,181 @@
+{% extends 'search/index.html' %}
+{% load static %}
+
+{% block search %}
+<style>
+    form {
+
+        margin: 0 auto;
+
+    }
+</style>
+
+<header id='head' class="masthead"></header>
+
+    <div class="container">
+
+      <br><br>
+
+    <div class="row text-center" style="width: 100%">
+      <form id='submit_page_1' class="form-inline mr-auto" action="{% url 'text_search_1' %}" method="get">
+        <input class="form-control mr-sm-2 text-center"  name="keyword" id="search_keyword" type="text" value="{{final_keyword}}"
+                placeholder="검색하고 싶은 키워드를 입력해주세요" style="width:700px" aria-label="Search">
+        <button id="button_submit" class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Wordcloud   <i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+
+    <br>
+
+
+    <div class="row text-center" style="width: 100%">
+      <form id='submit_page_2' action="{% url 'text_search_2' %}" method="get">
+        <input tpye="text" name="final_keyword" id="final_search_keyword"  value="{{final_keyword}}" style="display:none;"/>
+        <button id="final_search_button" type="submit" class="btn btn-primary"> 현재 키워드들로 검색하기 </button>
+      </form>
+    </div>
+
+    <br>
+
+
+    <div class="panel-group" id="accordion">
+    <div>
+        <button id="all_open" class="btn btn-link" type="button"> 전체 열기 </button>
+        <button id="all_close" class="btn btn-link" type="button"> 전체 닫기 </button>
+    </div>
+                                                    {% for data in data_list %}
+  <div class="card">
+    <div class="card-header" id="heading">
+      <h2 class="mb-0">
+        <button id='clickme' class="btn btn-link" type="button" data-target="#collapse_{{ forloop.counter }}"
+                aria-expanded="true" aria-controls="collapse_{{ forloop.counter }}">
+                    {{data.number}}&nbsp;&nbsp;&nbsp;{{data.title}}
+        </button>
+        <button class="btn btn-secondary" type="button" style="float: right;" onclick="location.href='http://patents.google.com/patent/'+'{{data.country}}{{data.number}}{{data.kind}}' ">
+                    해당 사이트로 이동&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i>
+
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapse_{{ forloop.counter }}" class="collapse" aria-labelledby="heading">
+      <div class="card-body">
+          <div class="row"><h5>&nbsp;Date&nbsp;</h5>:&nbsp; {{data.date}}</div>
+          <div class="row"><h5>&nbsp;Country&nbsp; </h5>:&nbsp; {{data.country}}</div>
+          <div class="row"><h5>&nbsp;Abstract&nbsp; </h5>&nbsp;&nbsp; {{data.abstract}}</div>
+      </div>
+    </div>
+  </div>
+                    {% endfor %}
+        </div>
+
+    <br>
+        <div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+
+    </div>
+
+
+<!--메뉴바 정리-->
+<script>
+$(function(){
+  $('#home').attr("href", "{% url 'search' %}");
+  $("li").remove("#About, #Services, #Portfolio, #Contact");
+<!--  $("#head.masthead").css('background','linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url(../img/bg-masthead.jpg)');-->
+<!--  $("#head.masthead").css('background','#746962');-->
+  $("#mainNav").css({'background':'#746962'});
+  $("#head.masthead").css({'height': 0, 'min-height':0, 'background':'#746962'});
+});
+</script>
+
+<!--검색 키워드 최종 키워드로 바꾸기 -->
+<script>
+$(function(){
+    $('#final_search_button').click(function(){
+        var final_keyword = $('#search_keyword').val();
+        $('#final_search_keyword').val(final_keyword);
+    });
+});
+</script>
+
+<!--검색 키워드 없을 때 -->
+<script>
+$('#final_search_button').click(function(){
+    var search_keyword = $('#search_keyword').val();
+    if (search_keyword == ""){
+        alert('검색어를 입력 후 검색해주세요!');
+        $("#submit_page_2").attr("action", "{% url 'vienna_search' %}");}
+    else {}
+    });
+$('#button_submit').click(function(){
+    var search_keyword = $('#search_keyword').val();
+    if (search_keyword == ""){
+        alert('검색어를 입력 후 검색해주세요!');
+        $("#submit_page_1").attr("action", "{% url 'vienna_search' %}");}
+    else {}
+    });
+</script>
+
+<!--클릭시 toggle 내려오기-->
+<script>
+$('button').click(function() {
+    var target = $(this).attr('data-target');
+        $(target ).slideToggle( "slow", function() {
+        // Animation complete.
+    });
+});
+</script>
+
+<!--전체 열고 닫기-->
+<script>
+$('#all_open').click(function() {
+    for(var i=1; i<10; i++){
+    var target = "#collapse_"+i;
+    $(target).slideDown( "slow", function() {
+        // Animation complete.
+    });
+    }
+});
+$('#all_close').click(function() {
+    for(var i=1; i<10; i++){
+    var target = "#collapse_"+i;
+    $(target).slideUp( "slow", function() {
+        // Animation complete.
+    });
+    }
+});
+</script>
+
+<!--<script>-->
+<!--$(function(){-->
+<!--  $('.form-control').val("{{search_keyword}}");-->
+<!--  {% for keyword in final_keyword %}-->
+<!--  var ctr = "{{keyword}}" + " X";-->
+<!--    var keyword_tag = "<input type='submit' name='add_keyword' class='keywords' style='background-color:#D9E5FF; color:#6799FF; margin:10px 5px 10px 5px' value='" + ctr + "'/>";-->
+<!--    $('#keyword_list').append(keyword_tag);-->
+<!--    {% endfor %}-->
+<!--});-->
+<!--</script>-->
+
+
+
+{% endblock %}

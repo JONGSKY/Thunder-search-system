@@ -1,3 +1,9 @@
+# deeplogo file i
+*.pkl 
+*.tc 
+*.pickle 
+deeplogo_web/image_search/images/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,90 @@
+{% extends 'search/base.html' %}
+{% load static %}
+
+{% block javasrcipt %}
+    <script type="text/javascript" charset="utf8"
+            src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="//cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="{% static 'vienna_search/echarts.js' %}"></script>
+    <script src="{% static 'vienna_search/image_search.js' %}"></script>
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'vienna_search/style.css' %}" rel="stylesheet">
+    <style>
+            .wrap-loading { /*화면 전체를 어둡게 합니다.*/
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2); /*not in ie */
+            filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000'); /* ie */
+        }
+        .wrap-loading div { /*로딩 이미지*/
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -21px;
+            margin-top: -21px;
+        }
+        .display-none { /*감추기*/
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block home_url %}
+    <a id='home' class="navbar-brand js-scroll-trigger" href="{% url 'trademark' %}">Trademark Search</a>
+    <a class="nav-link js-scroll-trigger" style="position:absolute; right:20px;" href="{% url 'image_search' %}">Image Search</a>
+{% endblock %}
+
+{% block main_page %}
+    <section class="page-section bg-dark text-white" id="search">
+        <br>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">Vienna Search</h2>
+                    <hr class="divider light my-4">
+                    <br>
+                    <div class="container text-center">
+                        <img src="" id="profile-img-tag" class="img-thumbnail" width="200px" />
+                        <br><br>
+                        <form method="GET" id="image_form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="custom-file input-group">
+                                <input type="file" class="custom-file-input" name='image' id="profile-img" required>
+                                <label class="custom-file-label" id='img-label' for="customFile">Choose file</label>
+                            </div>
+                            <br><br>
+                            <button id="search_patent" type="submit" class="btn btn-primary"> 비엔나코드 예측하기 </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="wordcloud_section" style="display: none;">
+        <div class="container">
+            <h2 class="text-center mt-0">WordCloud</h2>
+            <hr class="divider my-4">
+            <div class="col-sm-1 col-md-2"></div>
+            <div id="wordcloud" class="container col-sm-9, col-md-8">
+                <svg id="wordcloud_svg"></svg>
+            </div>
+            <div class="col-sm-1 col-md-2"></div>
+        </div>
+    </section>
+
+    <div id='footer'></div>
+
+    <div class="wrap-loading display-none">
+
+        <div><img src="{% static 'vienna_search/ajax-loader.gif' %}"/></div>
+
+    </div>
+
+{% endblock %}

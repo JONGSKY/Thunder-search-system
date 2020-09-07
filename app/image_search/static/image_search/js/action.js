@@ -103,7 +103,7 @@ $(document).ready(function(){
         }else if($(img).width() > $(img).height()){
             $(img).addClass("thumbnail-width");
         }else {
-            $(img).addClass("thumbnail-width");
+            $(img).addClass("thumbnail-height");
         }
     })
     

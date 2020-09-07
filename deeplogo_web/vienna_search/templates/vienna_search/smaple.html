@@ -1,0 +1,80 @@
+<!--{% extends 'search/index.html' %}-->
+<!--{% load static %}-->
+
+<!--{% block search %}-->
+
+<!--<style>-->
+<!--    form {-->
+
+<!--        margin: 0 auto;-->
+
+<!--    }-->
+<!--</style>-->
+
+<!--<header id='head' class="masthead"></header>-->
+
+<!--    <div class="container">-->
+
+<!--      <br><br>-->
+<!--    <div class="row text-center" style="width: 100%">-->
+<!--      <form id='submit_page_1' class="form-inline mr-auto" action="{% url 'text_search_1' %}" method="get">-->
+<!--        <input class="form-control mr-sm-2 text-center"  name="keyword" id="search_keyword" type="text"-->
+<!--                placeholder="검색하고 싶은 키워드를 입력해주세요" style="width:500px" aria-label="Search">-->
+<!--        <button id="button_submit" class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Wordcloud<i class="fa fa-search"></i></button>-->
+<!--      </form>-->
+<!--    </div>-->
+
+
+<!--    <br>-->
+
+
+<!--    <div class="row text-center" style="width: 100%">-->
+<!--      <form id='submit_page_2' action="{% url 'text_search_2' %}" method="get">-->
+<!--        <input tpye="text" name="final_keyword" id="final_search_keyword"  value="" style="display:none;"/>-->
+<!--        <button id="final_search_button" type="submit" class="btn btn-primary"> 현재 키워드들로 검색하기 </button>-->
+<!--      </form>-->
+<!--    </div>-->
+
+<!--    </div>-->
+
+<!--&lt;!&ndash;메뉴바 정리&ndash;&gt;-->
+<!--<script>-->
+<!--$(function(){-->
+<!--  $('#home').attr("href", "{% url 'home' %}");-->
+<!--  $("li").remove("#About, #Services, #Portfolio, #Contact");-->
+<!--&lt;!&ndash;  $("#head.masthead").css('background','linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url(../img/bg-masthead.jpg)');&ndash;&gt;-->
+<!--&lt;!&ndash;  $("#head.masthead").css('background','#746962');&ndash;&gt;-->
+<!--  $("#mainNav").css({'background':'#746962'});-->
+<!--  $("#head.masthead").css({'height': 0, 'min-height':0, 'background':'#746962'});-->
+<!--});-->
+<!--</script>-->
+
+<!--&lt;!&ndash;검색 키워드 최종 키워드로 바꾸기 &ndash;&gt;-->
+<!--<script>-->
+<!--$(function(){-->
+<!--    $('#final_search_button').click(function(){-->
+<!--        var final_keyword = $('#search_keyword').val();-->
+<!--        $('#final_search_keyword').val(final_keyword);-->
+<!--    });-->
+<!--});-->
+<!--</script>-->
+
+<!--&lt;!&ndash;검색 키워드 없을 때 &ndash;&gt;-->
+<!--<script>-->
+<!--$('#final_search_button').click(function(){-->
+<!--    var search_keyword = $('#search_keyword').val().trim();-->
+<!--    if (search_keyword == ""){-->
+<!--        alert('검색어를 입력 후 검색해주세요!');-->
+<!--        $("#submit_page_2").attr("action", "{% url 'vienna_search' %}");}-->
+<!--    else {}-->
+<!--    });-->
+<!--$('#button_submit').click(function(){-->
+<!--    var search_keyword = $('#search_keyword').val().trim();-->
+<!--    if (search_keyword == ""){-->
+<!--        alert('검색어를 입력 후 검색해주세요!');-->
+<!--        $("#submit_page_1").attr("action", "{% url 'vienna_search' %}");}-->
+<!--    else {}-->
+<!--    });-->
+<!--</script>-->
+
+<!--{% endblock %}-->
