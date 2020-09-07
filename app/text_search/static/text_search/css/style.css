@@ -454,7 +454,8 @@ pre {
    }
   @media (min-width: 576px) {
     .container {
-      max-width: 540px; } }
+      max-width: 540px; }
+  }
   @media (min-width: 768px) {
     .container {
       max-width: 720px; } }
@@ -4691,7 +4692,7 @@ a.close.disabled {
 .modal-open {
   overflow: hidden; }
   .modal-open .modal {
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: auto; }
 
 .modal {
@@ -4702,7 +4703,7 @@ a.close.disabled {
   display: none;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   outline: 0; }
 
 .modal-dialog {
@@ -9589,4 +9590,126 @@ body {
 
 a.btn-custom {
   color :#3C80F6 !important;
+}
+
+.modal-body {
+  margin-top : 75px;
+}
+.modal-content {
+  width : 70% !important;
+  height : 85%;
+  position: fixed;
+  left : 50%;
+  top : 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right:0 !important;
+}
+@media (max-width : 499px){
+  .modal-content {
+    width : 95% !important; 
+  }
+}
+
+.btn-modal{
+  color: #28b76b;
+  font-size : 15px;
+}
+
+.modal-header{
+   position:fixed;
+
+  width:100%;
+
+  top:0;
+
+  left:0;
+}
+.modal_content {
+  text-align: left;
+  padding-left: 0;
+}
+
+.modal_info {
+  border-radius: 5px;
+  background-color: #28b76b;
+  text-align: left;
+  padding-bottom : 10px;
+}
+
+
+.modal-content::-webkit-scrollbar{
+  display:none;
+}
+
+.modal-content-ect {
+  margin-top : 20px;
+  padding-right : 0;
+}
+.content-title{
+  font-size : 15px;
+  font-weight: 600;
+  border-bottom : 1px solid #5d6778;
+  margin : 10px 0 5px 0;
+}
+
+.info_row p {
+  margin-bottom : 5px;
+}
+.info_row {
+  margin-top : 10px
+}
+.class {
+  margin : 0
+}
+.product-thumbnail{
+	position : relative;
+	width: 100%;
+	height : 220px;
+	margin-bottom : 10px;
+}
+
+.thumbnail-height{
+	position : absolute;
+	height : 100%;
+	width: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.thumbnail-width{
+	position : absolute;
+	height : auto;
+	width : 100%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-height : 100%;
+}
+
+.detail-image {
+  position : relative;
+	width: 100%;
+	height : 90%;
+	margin-bottom : 10px;
+}
+@media (max-width : 499px){
+  .modal-content {
+    width : 95% !important; 
+    height : 90%;
+  }
+  .detail-image {
+    position : relative;
+      width: 100%;
+      height : 220px;
+      margin-bottom : 10px;
+  }
+  }
+.close:focus{
+	outline : none;
+}
+
+.col-lg-7.col-xs-12.modal_content, .col-12.modal_content.modal-content-ect {
+  color : gray;
 }
