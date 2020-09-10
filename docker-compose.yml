@@ -17,9 +17,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=patent_search
-      - POSTGRES_PASSWORD=patent_search
-      - POSTGRES_DB=patent_search_dev
+      - POSTGRES_USER=thunder
+      - POSTGRES_PASSWORD=thunder
+      - POSTGRES_DB=thunder_dev
 
 volumes:
   postgres_data:
