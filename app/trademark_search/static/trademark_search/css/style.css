@@ -1364,7 +1364,7 @@ margin-top : 10px
 	padding: 0.75rem 0;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-	color: #f4623a;
+	color: #28b76b;
   }
   #mainNav .navbar-nav .nav-item .nav-link.active {
 	color: #f4623a !important;
@@ -1374,14 +1374,11 @@ margin-top : 10px
 	  box-shadow: none;
 	  background-color: transparent;
 	}
-	#mainNav .navbar-brand:hover {
-	  color: #fff;
-	}
 	#mainNav .navbar-nav .nav-item .nav-link {
 	  padding: 0 1rem;
 	}
 	#mainNav .navbar-nav .nav-item .nav-link:hover {
-	  color: #fff;
+	  color: #28b76b;
 	}
 	#mainNav .navbar-nav .nav-item:last-child .nav-link {
 	  padding-right: 0;
