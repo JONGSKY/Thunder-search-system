@@ -1374,14 +1374,10 @@ margin-top : 10px
 	  box-shadow: none;
 	  background-color: transparent;
 	}
-	#mainNav .navbar-brand {
-	  color: rgba(255, 255, 255, 0.7);
-	}
 	#mainNav .navbar-brand:hover {
 	  color: #fff;
 	}
 	#mainNav .navbar-nav .nav-item .nav-link {
-	  color: rgba(255, 255, 255, 0.7);
 	  padding: 0 1rem;
 	}
 	#mainNav .navbar-nav .nav-item .nav-link:hover {
