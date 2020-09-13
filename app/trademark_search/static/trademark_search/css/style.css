@@ -1309,7 +1309,7 @@ margin-top : 10px
   }
   
   .navbar-dark .navbar-brand {
-	color: #fff;
+	color: rgb(148, 147, 147);
   }
   .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
 	color: #fff;
