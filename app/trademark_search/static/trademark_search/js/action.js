@@ -110,23 +110,26 @@ $(document).ready(function(){
 
 // ------ auto resize modal image ------
 $('.card').click(function(){
-    $(".thumbnail-img").each(function (index, img){
+    $(".detail-img").each(function (index, img){
+        $(img).removeClass("thumbnail-height thumbnail-width");
         if($(img).width() < $(img).height()){
             $(img).addClass("thumbnail-height");
         }else if($(img).width() > $(img).height()){
             $(img).addClass("thumbnail-width");
         }else {
-            $(img).addClass("thumbnail-width");
+            $(img).addClass("thumbnail-height");
         }
     })
 });
 
-$(document).ready(function(){
-    $(".thumbnail-img").each(function (index, img){
-        console.log($(img).height());
-        console.log($(img).width());
-    });
-});
+// $('.detail-image').on('load', function(){
+//     console.log('one');
+// });
+// $(document).ready(function() {
+//     console.log($('.detail-image')[0].naturalHeight);
+//     console.log($('.detail-image')[0].naturalWidth);   
+// });
+
 // ------ pagination control ------
 
 $('.page-num').click(function() {
