@@ -6793,9 +6793,6 @@ button.bg-dark:focus {
 .px-5 {
   padding-right: 3rem !important; }
 
-.pb-5,
-.py-5 {
-  padding-bottom: 3rem !important; }
 
 .pl-5,
 .px-5 {
@@ -9744,7 +9741,27 @@ a.btn-custom {
   color : gray;
 }
 
-.navbar-toggler.navbar-toggler-right {
-  right: 0;
-  position: absolute;
+
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+  text-decoration: none;
 }

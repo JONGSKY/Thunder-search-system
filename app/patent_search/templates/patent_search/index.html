@@ -6,7 +6,8 @@
     <title>Thunder-Patent Search</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700  display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
 	<script defer src="{% static 'patent_search/fontawesome/js/all.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'patent_search/css/open-iconic-bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'patent_search/css/animate.css' %}">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="{% static 'patent_search/css/jquery.timepicker.css' %}">
 
     
+    
     <link rel="stylesheet" href="{% static 'patent_search/css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'patent_search/css/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'patent_search/css/style.css' %}">
@@ -33,13 +35,13 @@
   
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">⚡Thunder</a>
+                <a class="navbar-brand js-scroll-trigger" href="{% url 'main_page_home' %}">⚡Thunder</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Patent-Search</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Trademark-Search</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main_page_home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'patent_search_home' %}">Patent_Search</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'trademark_search_home' %}">Trademark_Search</a></li>
                     </ul>
                 </div>
             </div>
@@ -257,9 +259,7 @@
             </div>
         </div>
         <!-- Footer-->
-        <footer class="footer-email">
-            <p class="email-info">Please Mail here :> asds238@gmail.com</p>
-        </footer>
+
 
         <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
