@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Thunder</title>
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="{% static 'trademark_search/img/favicon.ico' %}" type="image/x-icon">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{%static 'trademark_search/css/style.css' %}" rel="stylesheet"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">⚡Thunder</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main_page_home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'patent_search_home' %}">Patent-Search</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'trademark_search_home' %}">TM / Vienna -Search</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        
+        <!-- About-->
+        <div class="page-header theme-bg-dark text-center position-relative">
+            <!-- <div class="theme-bg-shapes-right"></div>
+            <div class="theme-bg-shapes-left"></div> -->
+            <div class="container search-part">
+                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search">Trademark-Search</span><span class="vienna-search" style="display:none">Vienna-Search</span></h1>
+                <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+                <div class="main-search-box pt-3 d-block mx-auto">
+                    <div class="main-menu">
+                        <div class="radio-btn">
+                            <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> TradeMark
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Vienna
+                            </label>
+                        </div>
+                        <div class="">
+                            <div id="image_container">
+                                <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Drag and Drop your file here...</p>
+                            </div>
+                            <div class="upload">
+                            <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);">
+                            <p class="upload-btn">File Upload</p>
+                            </div>
+                            <button type="button" class="search_btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          </div><!--//page-header-->
+        
+          {% block content %}
+          {% endblock %}
+          <footer>
+              <div class="container">
+                  <div class="row footer_row">
+                    <div class="justify-content-end align-items-center footer-email">
+                      <p id="address">Please Mail here :> asds238@gmail.com</p>
+                          </div><!--//docs-top-utilities-->
+                  </div>
+              </div>
+          </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{%static 'trademark_search/js/scripts.js' %}"></script>
+        <script src="{%static 'trademark_search/js/action.js' %}"></script>
+    </body>
+</html>
