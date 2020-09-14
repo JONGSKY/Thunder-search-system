@@ -159,12 +159,12 @@ sup {
 }
 
 a {
-  color: #f4623a;
+  color: #28b76b;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #d6370c;
+  color: #28b76b;
   text-decoration: underline;
 }
 
@@ -2471,8 +2471,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #f4623a;
-  border-color: #f4623a;
+  background-color: #28b76b;
+  border-color: #28b76b;
 }
 .btn-primary:hover {
   color: #fff;
@@ -3969,7 +3969,7 @@ input[type=button].btn-block {
   text-align: center;
 }
 
-.tab-content > .tab-pane {
+.tab-contenfloatt > .tab-pane {
   display: none;
 }
 .tab-content > .active {
@@ -4304,7 +4304,7 @@ input[type=button].btn-block {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: rgb(148, 147, 147);
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
   color: #fff;
@@ -4314,6 +4314,7 @@ input[type=button].btn-block {
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
   color: rgba(255, 255, 255, 0.75);
+  font-weight : 500;
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
@@ -10019,7 +10020,7 @@ html {
 hr.divider {
   max-width: 3.25rem;
   border-width: 0.2rem;
-  border-color: #f4623a;
+  border-color: #28b76b;
 }
 
 hr.light {
@@ -10061,7 +10062,7 @@ hr.light {
   padding: 0.75rem 0;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #f4623a;
+  color: #28b76b;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #f4623a !important;
@@ -10071,18 +10072,11 @@ hr.light {
     box-shadow: none;
     background-color: transparent;
   }
-  #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  #mainNav .navbar-brand:hover {
-    color: #fff;
-  }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
+    color: #28b76b;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
@@ -10182,4 +10176,9 @@ header.masthead h1 {
 
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
+}
+
+/* ------ 버튼 클릭시 테두리 제거 ------ */
+*:focus {
+  outline : none !important;
 }
