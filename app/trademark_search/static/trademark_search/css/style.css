@@ -1387,16 +1387,16 @@ margin-top : 10px
 	  background-color: #fff;
 	}
 	#mainNav.navbar-scrolled .navbar-brand {
-	  color: #212529;
+	  color: #000;
 	}
 	#mainNav.navbar-scrolled .navbar-brand:hover {
-	  color: #f4623a;
+	  color: #000;
 	}
 	#mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-	  color: #212529;
+	  color: #6c757d;
 	}
 	#mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-	  color: #f4623a;
+	  color: #28b76b;
 	}
   }
   .pb-3, .py-3 {
