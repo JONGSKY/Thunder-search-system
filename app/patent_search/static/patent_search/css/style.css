@@ -9765,3 +9765,7 @@ a.btn-custom {
 .navbar-toggler:hover, .navbar-toggler:focus {
   text-decoration: none;
 }
+
+.navbar-brand.js-scroll-trigger{
+  font-weight: bold;
+}
