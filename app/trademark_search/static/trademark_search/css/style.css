@@ -228,7 +228,7 @@ a.theme-link:hover {
 
 /* ------ 검색 창 ------ */
 .page-header {
-	padding : 30px 0;
+	padding : 110px 0 30px 0;
   }
 
 .page-header.theme-bg-dark .page-heading {
@@ -968,7 +968,6 @@ margin-top : 10px
 /* ------ Header menu 부분 ------ */
 .nav-link {
 	display: block;
-	padding: 0.5rem 1rem !important;
 	}
 	.nav-link:hover, .nav-link:focus {
 	text-decoration: none;
@@ -986,7 +985,7 @@ margin-top : 10px
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0.75rem !important;
+	padding: 0.5rem 1rem;
   }
   .navbar .container,
   .navbar .container-fluid,
@@ -1372,7 +1371,7 @@ margin-top : 10px
   @media (min-width: 992px) {
 	#mainNav {
 	  box-shadow: none;
-	  background-color: transparent;
+	  background-color: #fff;
 	}
 	#mainNav .navbar-nav .nav-item .nav-link {
 	  padding: 0 1rem;
@@ -1388,16 +1387,28 @@ margin-top : 10px
 	  background-color: #fff;
 	}
 	#mainNav.navbar-scrolled .navbar-brand {
-	  color: #212529;
+	  color: #000;
 	}
 	#mainNav.navbar-scrolled .navbar-brand:hover {
-	  color: #f4623a;
+	  color: #000;
 	}
 	#mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-	  color: #212529;
+	  color: #6c757d;
 	}
 	#mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-	  color: #f4623a;
+	  color: #28b76b;
 	}
   }
-  
+  .pb-3, .py-3 {
+    padding-bottom: 1rem !important;
+}
+.pb-3, .py-3 {
+    padding-bottom: 1rem !important;
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}

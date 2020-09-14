@@ -122,14 +122,6 @@ $('.card').click(function(){
     })
 });
 
-// $('.detail-image').on('load', function(){
-//     console.log('one');
-// });
-// $(document).ready(function() {
-//     console.log($('.detail-image')[0].naturalHeight);
-//     console.log($('.detail-image')[0].naturalWidth);   
-// });
-
 // ------ pagination control ------
 
 $('.page-num').click(function() {
@@ -143,3 +135,4 @@ $('.page-next').click(function(){
 $('.page-pre').click(function(){
     $('.active').prev('.page-num').addClass('active').siblings().removeClass('active');
 });
+
