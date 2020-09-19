@@ -31,7 +31,7 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 #DEBUG = True
 
 if os.environ.get('DJANGO_ALLOWED_HOSTS') is None:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+    ALLOWED_HOSTS = ['zubiri.gachon.ac.kr', '127.0.0.1', 'localhost']
 else:
     ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 
