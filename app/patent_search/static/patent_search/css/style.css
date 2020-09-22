@@ -451,7 +451,6 @@ pre {
 
   .container {
     width: 100%;
-    padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
@@ -469,7 +468,6 @@ pre {
   @media (min-width: 1200px) {
     .container {
       max-width: 1140px; } }
-
 
 
 .container-fluid {
@@ -6785,9 +6783,7 @@ button.bg-dark:focus {
 .p-5 {
   padding: 3rem !important; }
 
-.pt-5,
-.py-5 {
-  padding-top: 3rem !important; }
+
 
 .pr-5,
 .px-5 {
@@ -8160,8 +8156,7 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: #fff;
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
   font-weight: 400;
   color: #666666; }
   body.offcanvas {
@@ -9363,10 +9358,15 @@ textarea.form-control {
 	font-size:1.125rem
 }
 
+#mainNav .navbar-brand {
+	font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-weight: 700;
+	color: #212529;}
+
 .container-search-part{
   background-color: #28b76b;
-  margin-top: -46px;
   border: 1px solid none;
+  padding:50px 50px;
 }
 
 .main-search-box {
@@ -9768,4 +9768,9 @@ a.btn-custom {
 
 .navbar-brand.js-scroll-trigger{
   font-weight: bold;
+}
+
+.search-before-ment .ment-detail{
+  color:#6C757D !important;
+
 }

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Patent Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+	<script defer src="{% static 'patent_search/fontawesome/js/all.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'patent_search/css/open-iconic-bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'patent_search/css/animate.css' %}">
+	<link rel="shortcut icon" href="{% static 'image_search/img/favicon.ico' %}" type="image/x-icon">
+    
+    <link rel="stylesheet" href="{% static 'patent_search/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'patent_search/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'patent_search/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'patent_search/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'patent_search/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'patent_search/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'patent_search/css/jquery.timepicker.css' %}">
+
+    
+    
+    <link rel="stylesheet" href="{% static 'patent_search/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'patent_search/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'patent_search/css/style.css' %}">
+  </head>
+
+    <body>
+  
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="{% url 'main_page_home' %}">⚡Thunder</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main_page_home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'patent_search_home' %}">Patent_Search</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'trademark_search_home' %}">Trademark_Search</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- About-->
+        <div class="page-header theme-bg-dark py-5 text-center position-relative">
+
+            <div class="container-search-part">
+                <h1 class="page-heading single-col-max mx-auto"><span class="text-search" >Patent-Search</span><span class="image-search" style="display:none">Image-Search</span></h1>
+                <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+                <div class="main-search-box pt-3 d-block mx-auto">
+                    <div class="main-menu">
+                        <div class="text-search"  class="hero__search">
+                            <form class="search-form w-100" action="{% url 'search' %}" method="GET"> 
+                                {% csrf_token %}
+                            <input type="Search" placeholder="Search the docs..." name="search_name" class="form-control search-input" aria-label="Search" value="{{search_name}}">
+                            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+                           </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% block content %}
+        {% endblock %}
+        
+
+        
+        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+        <script src="{% static 'patent_search/js/jquery.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery-migrate-3.0.1.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/popper.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/aos.js' %}"></script>
+        <script src="{% static 'patent_search/js/jquery.animateNumber.min.js' %}"></script>
+        <script src="{% static 'patent_search/js/scrollax.min.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="{% static 'patent_search/js/google-map.js' %}"></script>
+        <script src="{% static 'patent_search/js/main.js' %}"></script></script>
+    </body>
+</html>
