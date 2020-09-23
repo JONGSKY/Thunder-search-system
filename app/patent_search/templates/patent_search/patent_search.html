@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main_page_home' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'patent_search_home' %}">Patent_Search</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'patent_search' %}">Patent_Search</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'trademark_search_home' %}">Trademark_Search</a></li>
                     </ul>
                 </div>
@@ -56,8 +56,7 @@
                 <div class="main-search-box pt-3 d-block mx-auto">
                     <div class="main-menu">
                         <div class="text-search"  class="hero__search">
-                            <form class="search-form w-100" action="{% url 'search' %}" method="GET"> 
-                                {% csrf_token %}
+                            <form class="search-form w-100" action="{% url 'patent_search_result' %}" method="GET"> 
                             <input type="Search" placeholder="Search the docs..." name="search_name" class="form-control search-input" aria-label="Search" value="{{search_name}}">
                             <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
                            </form>

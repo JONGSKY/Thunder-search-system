@@ -2,12 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def home(request):
+def patent_search(request):
     return render(request, 'patent_search/patent_search.html')
 
 
-def search_action(request):
+def patent_search_result(request):
     search_input = request.GET.get('search_name', "") 
-    return render(request, 'patent_search/patent_search_result.html', { 'search_name' : search_input})
+    result = {'search_name' : search_input}
+    return render(request, 'patent_search/patent_search_result.html', result)
     
 
