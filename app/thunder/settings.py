@@ -35,6 +35,11 @@ if os.environ.get('DJANGO_ALLOWED_HOSTS') is None:
 else:
     ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'elasticsearch:9200'
+    },
+}
 
 # Application definition
 
@@ -45,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_elasticsearch_dsl',
     'main_page',
     'patent_search',
     'trademark_search'
