@@ -1,4 +1,7 @@
-# deeplogo file i
+# patent db
+mysql-data/patent_data.sql
+
+# deeplogo file
 *.pkl 
 *.tc 
 *.pickle 
