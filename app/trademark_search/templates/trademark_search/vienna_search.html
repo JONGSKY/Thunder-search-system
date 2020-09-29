@@ -42,29 +42,32 @@
             <!-- <div class="theme-bg-shapes-right"></div>
             <div class="theme-bg-shapes-left"></div> -->
             <div class="container search-part">
-                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search">Logo-Search</span><span class="vienna-search" style="display:none">Vienna-Search</span></h1>
+                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search" style="display:none">Logo-Search</span><span class="vienna-search">Vienna-Search</span></h1>
                 <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
                 <div class="main-search-box pt-3 d-block mx-auto">
-                    <div class="main-menu">
-                        <div class="radio-btn">
-                            <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> Logo
-                            </label>
-                            <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Vienna
-                            </label>
-                        </div>
+                    <div class="radio-btn">
+                        <label class="radio-inline" class="convert">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"><a href="{% url 'logo_search' %}" class="convert"> Logo</a>
+                        </label>
+
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked><a href="{% url 'vienna_search' %}" class="convert"> Vienna</a>
+                        </label>
+                    </div>
+                    <form class="main-menu" action="{% url 'vienna_search_result' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="">
                             <div id="image_container">
                                 <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Drag and Drop your file here...</p>
                             </div>
+                    
                             <div class="upload">
-                            <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);">
-                            <p class="upload-btn">File Upload</p>
+                                <p class="upload-btn">File Upload</p>   
+                                <input type="file" id="image" name="vienna_search_image" accept="image/*" onchange="setThumbnail(event);">
                             </div>
-                            <button type="button" class="search_btn">Search</button>
+                            <input type="submit" value="Search" class="search_btn">
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             

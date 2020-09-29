@@ -1,0 +1,35 @@
+{% extends 'trademark_search/vienna_search.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content">
+    <div class="container">
+        <div class="docs-overview py-5">
+            <div id="results" class="row justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 py-3">
+					<div class="card shadow-sm">
+						<div class="card-body btn btn-modal btn-lg" data-toggle="modal" data-target="#myModal"">
+							<div class="product-thumbnail">
+								<img src="{% static 'trademark_search/img/product-1.jpg' %}" alt="product-1" class="thumbnail-img">
+							</div>
+							<div class="featured__item__text">
+								<h6>Crab Pool Security</h6>
+								<div class="card-text">
+									<p>Section overview goes here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+									<div class="meta-wrap">
+										<p class="meta viewer">
+										  <span><i class="icon-calendar mr-2"></i>August 25, 2020</span>
+										  <span><i class="icon-comment2 mr-2"></i>5 Views</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div><!--//card-body-->
+					</div><!--//card-->
+				</div><!--//col-->
+			</div><!--//row-->
+		
+        </div><!--//container-->
+    </div><!--//container-->
+</div><!--//page-content-->
+
+{% endblock %}
