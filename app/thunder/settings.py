@@ -37,7 +37,7 @@ else:
 
 ELASTICSEARCH_DSL={
     'default': {
-        'hosts': 'elasticsearch:9200'
+        'hosts': 'zubiri.gachon.ac.kr:9200'
     },
 }
 
