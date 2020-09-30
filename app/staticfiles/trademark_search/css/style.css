@@ -1412,3 +1412,8 @@ margin-top : 10px
     left: 0;
     z-index: 1030;
 }
+
+.convert, .convert:hover, .convert:visited, .convert:link {
+	color : white;
+	text-decoration: none;
+}

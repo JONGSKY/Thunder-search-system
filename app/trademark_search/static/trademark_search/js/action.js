@@ -19,10 +19,12 @@ function setThumbnail(events) {
         document.getElementById("image_container").appendChild(imgName);
         imgName.setAttribute('style', 'font-size:12px');
         imgName.setAttribute('id', 'imgTitle');
-        $('#imgTitle').text(events.target.files[0].name);
-    };
-    
+
+
+        
+    }
     reader.readAsDataURL(event.target.files[0]);
+    
 }
 $('#image_container')
 .on("dragover", dragOver)
@@ -68,7 +70,6 @@ function uploadFiles(img) {
             addImg.appendChild(imgName);
             imgName.setAttribute('style', 'font-size:12px');
             imgName.setAttribute('id', 'imgTitle');
-            $('#imgTitle').text(files[0].name);
             
     }else{
     alert('이미지가 아닙니다.');
@@ -83,12 +84,15 @@ $("input:radio[name=inlineRadioOptions]").click(function(){
     if($("input[name=inlineRadioOptions]:checked").val() == "option1"){
         $(".tm-search").css("display", "");
         $(".vienna-search").css("display", "none");
+        var origin = new URL(window.location.href).origin;
+        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/logo_search/"));
         // radio 버튼의 value 값이 1이라면 활성화
 
     }else if($("input[name=inlineRadioOptions]:checked").val() == "option2"){
         $(".tm-search").css("display", "none");
         $(".vienna-search").css("display", "");
-        // radio 버튼의 value 값이 0이라면 비활성화
+        var origin = new URL(window.location.href).origin;
+        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/vienna_search/"));
     }
 });
 });
@@ -135,4 +139,3 @@ $('.page-next').click(function(){
 $('.page-pre').click(function(){
     $('.active').prev('.page-num').addClass('active').siblings().removeClass('active');
 });
-
