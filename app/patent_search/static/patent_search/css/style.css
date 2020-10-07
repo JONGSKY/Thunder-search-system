@@ -483,8 +483,8 @@ pre {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 auto}
-
+  margin: 0 auto; }
+  
 .no-gutters {
   margin-right: 0;
   margin-left: 0; }
@@ -7322,9 +7322,9 @@ button.bg-dark:focus {
   .pt-md-5,
   .py-md-5 {
     padding-top: 3rem !important; }
-  .pr-md-5,
+  /*.pr-md-5,
   .px-md-5 {
-    padding-right: 3rem !important; }
+    padding-right: 3rem !important; }*/
   .pb-md-5,
   .py-md-5 {
     padding-bottom: 3rem !important; }
@@ -9353,6 +9353,9 @@ textarea.form-control {
   color: #fff;
   border-bottom: 1px solid white;
 }
+.page-header.theme-bg-dark .notice_none.result{
+  color: #6c757d!important;
+}
 
 .page-intro {
 	font-size:1.125rem
@@ -9471,7 +9474,7 @@ body {
 	-moz-osx-font-smoothing:grayscale;
   padding-top:69px;
   margin-bottom:0;
-  color:#fff;
+  
   
 }
 
