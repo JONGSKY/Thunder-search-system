@@ -8625,7 +8625,7 @@ h1, h2, h3, h4, h5,
         text-align: center; } }
     .blog-entry .text h3 {
       font-weight: 400;
-      font-size: 30px; }
+      font-size: 24px; }
       .blog-entry .text h3 a {
         color: #3C80F6 !important; }
     .blog-entry .text .meta-wrap {
@@ -9809,3 +9809,10 @@ a.btn-custom {
 	  color: #28b76b;
 	}
   }
+
+.alert_message{
+  color : #28b76b;
+  font-weight: bold;
+  font-size: 48px;
+
+}

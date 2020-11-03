@@ -11,7 +11,7 @@
 	<script defer src="{% static 'patent_search/fontawesome/js/all.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'patent_search/css/open-iconic-bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'patent_search/css/animate.css' %}">
-	<link rel="shortcut icon" href="{% static 'trademark_search/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="shortcut icon" href="{% static 'image_search/img/favicon.ico' %}" type="image/x-icon">
     
     <link rel="stylesheet" href="{% static 'patent_search/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'patent_search/css/owl.theme.default.min.css' %}">
@@ -56,15 +56,16 @@
                 <div class="main-search-box pt-3 d-block mx-auto">
                     <div class="main-menu">
                         <div class="text-search"  class="hero__search">
-                            <form class="search-form w-100" action="{% url 'patent_search_result' %}" method="GET">
+                            <form class="search-form w-100" action="{% url 'patent_search_result' %}" method="GET"> 
                             <input type="Search" placeholder="Search the docs..." name="search_name" class="form-control search-input" aria-label="Search" value="{{search_name}}">
-                            <input type="hidden" name="page" class="form-control default page" value=1>
                             <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="notice_none_result"><span class="alert_message" >There is No such data.</span></div>
         {% block content %}
         {% endblock %}
         

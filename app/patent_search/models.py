@@ -16,16 +16,6 @@ class PatentEmbedding(models.Model):
         managed = False
         db_table = 'patent_embedding'
 
-
-class PatentNgram(models.Model):
-    patent_id = models.CharField(primary_key=True, max_length=20)
-    ngram_words = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'patent_ngram'
-
-
 class Patentsview(models.Model):
     patent_id = models.CharField(primary_key=True, max_length=20)
     title = models.TextField(blank=True, null=True)

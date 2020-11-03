@@ -7,18 +7,13 @@
             <div class="container">
                 <div class="row d-flex">
                     <div class="col-xl-8 py-5 px-md-5">    
-                        <div class="row pt-md-4">
+                        <div class="row pt-md-4">                
                             <div class="col-md-12">
+                                {% for patent in patent_list %}
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                <img src="{% static 'patent_search/images/image_2.png' %}" alt="landscape" class="landscape">
-                                </div>
-                            </div>
-                            {% for patent in patent_list %}
-                            <div class="col-md-12">
-                                <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="#" class="img img-2" style="background-image: url({% static 'patent_search/images/image_1.jpg' %});"></a>
+                                    <a href="#" class="img img-2" style="background-image: url({% static 'patent_search/images/image_1.jpg' %});" data-toggle="modal" data-target="#Modal-patent-id-{{patent.number}}"></a>
                                     <div class="text text-2 pl-md-4">
-                                        <h3 class="mb-2"><a href="#" data-toggle="modal" data-target="#myModal">{{patent.title}}</a></h3>
+                                        <h3 class="mb-2"><a href="#" data-toggle="modal" data-target="#Modal-patent-id-{{patent.number}}">{{patent.title}}</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                               <span><i class="icon-calendar mr-2"></i>{{patent.date | date:"Y-m-d"}}</span>
@@ -26,86 +21,85 @@
                                               <span><i class="icon-comment2 mr-2"></i>{{patent.number}}</span>
                                               </p>
                                           </div>
-                                          <p class="mb-4">{{patent.abstract | truncatechars:130}}</p>
-                                          <p><a href="#" class="btn-custom btn btn-modal btn-lg" data-toggle="modal" data-target="#myModal">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                                          <p class="mb-4">{{patent.abstract | truncatechars:120}}</p>
+                                          <p><a href="#" class="btn-custom btn btn-modal btn-lg" data-toggle="modal" data-target="#Modal-patent-id-{{patent.number}}">Read More <span class="ion-ios-arrow-forward"></span></a></p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                
+                                <div class="modal" id="Modal-patent-id-{{patent.number}}" tabindex="-1" role="dialog" aria-labelledby="Modal-patent-id-{{patent.number}}" aria-hidden="true">
                                     <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h4 class="modal-title" id="myModalLabel">{{patent.title}}</h4>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        </div>
-                                        <div class="modal-body container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-7 col-xs-12 modal_content">
-                                                    <p class='content-title'>Abstract</p>
-                                                    <p>{{patent.abstract}}</p>
-                                                </div>
-                                                <div class="col-lg-5 col-xs-12 modal_info">
-                                                    <div class="info_row"><p class="content-title">Patent ID</p><p>{{patent.number}}</p></div>
-                                                    <div class="info_row"><p class="content-title">Patent Date</p><p>{{patent.date | date:"Y-m-d"}}</p></div>
-                                                    <div class="info_row"><p class="content-title">Country</p><p>{{patent.country}}</p></div>
-                                                    <div class="info_row"><p class="content-title">Kind(Category)</p><p>{{patent.kind}}</p></div>
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h4 class="modal-title" id="Modal-patent-id-{{patent.number}}">{{patent.title}}</h4>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body container-fluid">
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-xs-12 modal_content">
+                                                        <p class='content-title'>Abstract</p>
+                                                        <p>{{patent.abstract}}</p>
+                                                    </div>
+                                                    <div class="col-lg-5 col-xs-12 modal_info">
+                                                        <div class="info_row"><p class="content-title">Patent ID</p><p>{{patent.number}}</p></div>
+                                                        <div class="info_row"><p class="content-title">Patent Date</p><p>{{patent.date | date:"Y-m-d"}}</p></div>
+                                                        <div class="info_row"><p class="content-title">Country</p><p>{{patent.country}}</p></div>
+                                                        <div class="info_row"><p class="content-title">Kind(Category)</p><p>{{patent.kind}}</p></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-modal">More...</button>
+                                            <div class="modal-footer">
+
+                                              <button type="button" class="btn btn-modal"> <a id='google_patent' href="http://www.google.co.kr/patents/{{patent.country}}{{patent.number}}{{patent.kind}}" target="_blank">More...</a></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                {%endfor%}
                             </div>
-                            {% endfor %}
-    
-                        <div class="row">
-                            <div class="col">
-                                
-                                <ul class="pagination">
-                                    {% if patent_list.has_previous %}
-                                    <li class="page-item">
-                                        <a href="?page=1" class="page-link">&laquo;</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" 
-                                           href="?page={{ page.previous_page_number }}"
-                                           tabindex="-1">&lt;
-                                        </a>
-                                    </li>
-                                    {% endif %}
-                                    <!-- 페이지 범위 및 현재 페이지 -->
-                                    {% for page in paginator_range %}
-                                    {% if patent_list.number == page %}
-                                    <li class="page-item active">
-                                        <span class="page-link">{{ page }}
-                                            <span class="sr-only">(current)</span>
-                                        </span>
-                                    </li>
-                                    {% else %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ page }}">{{ page }}</a>
-                                    </li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    <!-- 다음 페이지 -->
-                                    {% if patent_list.has_next %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ page.next_page_number }}">&gt;</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="?page={{ page.paginator.num_pages }}" class="page-link">&raquo;</a>
-                                    </li>
-                                    {% endif %}
-                                </ul>
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="pagination">
+                                        {% if patent_list.has_previous %}
+                                        <li class="page-item">
+                                            <a href="?search_name={{search_name}}&page={{1}}" class="page-link">&laquo;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" 
+                                               href="?search_name={{search_name}}&page={{ patent_list.previous_page_number }}"
+                                               tabindex="-1">&lt;
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% for page in paginator_range %}
+                                            {% if patent_list.number == page %}
+                                            <li class="page-item active">
+                                            <span class="page-link">{{ patent_list.number }}
+                                                <span class="sr-only">(current)</span>
+                                            </span>
+                                            </li>
+                                            {% else %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?search_name={{search_name}}&page={{page}}">{{ page }}</a>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if patent_list.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?search_name={{search_name}}&page={{ patent_list.next_page_number }}">&gt;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="?search_name={{search_name}}&page={{ patent_list.paginator.num_pages }}" class="page-link">&raquo;</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
