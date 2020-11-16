@@ -9809,3 +9809,10 @@ a.btn-custom {
 	  color: #28b76b;
 	}
   }
+
+.alert_message{
+  color : #28b76b;
+  font-weight: bold;
+  font-size: 48px;
+
+}
