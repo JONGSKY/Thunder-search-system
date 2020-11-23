@@ -1,5 +1,6 @@
 # pull official base image
-FROM python:3.8.5-alpine
+#FROM python:3.8.5-alpine
+FROM python:3.8
 
 # set work directory
 WORKDIR /usr/src/app
@@ -12,20 +13,26 @@ ENV PYTHONUNBUFFERED 1
 # RUN apk update \
 #     && apk add postgresql-dev gcc python3-dev musl-dev 
 
-RUN apk update
-RUN apk add musl-dev mariadb-dev gcc netcat-openbsd
-RUN pip install mysqlclient
+RUN apt update
+
+#RUN apt install musl-dev mariadb-dev gcc netcat-openbsd
+RUN apt install gcc 
 
 # install dependencies
 RUN pip install --upgrade pip
+RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN pip --version
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
+
+RUN pip install mysqlclient
+
 
 # copy entrypoint.sh
 COPY ./entrypoint.sh .
 
 # copy project
-COPY . .
+# COPY . .
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

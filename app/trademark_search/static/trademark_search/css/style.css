@@ -618,9 +618,9 @@ a.theme-link:hover {
 	.docs-article .section-heading {
 		font-size:1.5rem
 	}
-	#image_container {
+	/* #image_container {
 		display : none;
-	}
+	} */
 	
 }
 @media (max-width:1199.98px) {
@@ -642,13 +642,13 @@ a.theme-link:hover {
 	margin-bottom: 0;
 	margin-left : 10px;
 }
-#image {
+.image {
 	position : absolute;
 	top : 50%;
 	left : 50%;
 	transform : translate(-50%, -50%);
 	width : 100%;
-	height : 35px;
+	height : 100%;
 	padding : 10px 0;
 	opacity : 0;
 	cursor: pointer;
@@ -720,6 +720,7 @@ a.theme-link:hover {
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	width: 100%;
 	transform: translate(-50%, -50%);
   }
   
@@ -809,8 +810,8 @@ a.theme-link:hover {
 
 .upload {
 	position : relative;
-	color : white;
 	width : 100%;
+	height :200px;
 	margin : 10px 0;
 	border: none;
 	border-radius : 10px;

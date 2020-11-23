@@ -85,14 +85,14 @@ $("input:radio[name=inlineRadioOptions]").click(function(){
         $(".tm-search").css("display", "");
         $(".vienna-search").css("display", "none");
         var origin = new URL(window.location.href).origin;
-        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/logo_search/"));
+        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/logo_search"));
         // radio 버튼의 value 값이 1이라면 활성화
 
     }else if($("input[name=inlineRadioOptions]:checked").val() == "option2"){
         $(".tm-search").css("display", "none");
         $(".vienna-search").css("display", "");
         var origin = new URL(window.location.href).origin;
-        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/vienna_search/"));
+        window.location.replace(location.href.replace(window.location.href, origin + "/trademark_search/vienna_search"));
     }
 });
 });

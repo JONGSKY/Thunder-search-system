@@ -18,6 +18,51 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{%static 'trademark_search/css/style.css' %}" rel="stylesheet"/>
+
+        <style>
+            .wrap-loading { /*화면 전체를 어둡게 합니다.*/
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2); /*not in ie */
+            filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000'); /* ie */
+        }
+        .wrap-loading div { /*로딩 이미지*/
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -21px;
+            margin-top: -21px;
+        }
+        .display-none { /*감추기*/
+            display: none;
+        }
+        #loading { 
+            width: 100%; 
+            height: 100%; 
+            top: 0px; 
+            left: 0px; 
+            position: fixed; 
+            display: block; 
+            opacity: 0.7; 
+            background-color: #fff; 
+            z-index: 99; 
+            text-align: center; } 
+            
+        #loading-image { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            z-index: 100; }
+    </style>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Load d3.js -->
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
     </head>
     <body id="page-top">
 
@@ -42,11 +87,11 @@
             <!-- <div class="theme-bg-shapes-right"></div>
             <div class="theme-bg-shapes-left"></div> -->
             <div class="container search-part">
-                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search" style="display:none">Logo-Search</span><span class="vienna-search">Vienna-Search</span></h1>
-                <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search" style="display:none">Logo Search</span><span class="vienna-search">Vienna Search</span></h1>
+                <div class="page-intro single-col-max mx-auto">Help you with all of the trademark you want to find.</div>
                 <div class="main-search-box pt-3 d-block mx-auto">
                     <div class="radio-btn">
-                        <label class="radio-inline" class="convert">
+                        <label class="radio-inline">
                             <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"><a href="{% url 'logo_search' %}" class="convert"> Logo</a>
                         </label>
 
@@ -54,18 +99,18 @@
                             <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked><a href="{% url 'vienna_search' %}" class="convert"> Vienna</a>
                         </label>
                     </div>
-                    <form class="main-menu" action="{% url 'vienna_search_result' %}" method="post" enctype="multipart/form-data">
+                    <form class="main-menu"  id="image_form" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="">
-                            <div id="image_container">
-                                <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Drag and Drop your file here...</p>
-                            </div>
-                    
                             <div class="upload">
-                                <p class="upload-btn">File Upload</p>   
-                                <input type="file" id="image" name="vienna_search_image" accept="image/*" onchange="setThumbnail(event);">
-                            </div>
-                            <input type="submit" value="Search" class="search_btn">
+                                <div id="image_container">
+                                    <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Click here or Drag and Drop your file here...</p>
+                                </div>
+                                <input type="file" id="profile-img" class="image custom-file-input" name="image" accept="image/*" onchange="setThumbnail(event);" required>
+                            </div>   
+                            <br>
+
+                            <input id="search_patent" type="submit" value="Search" class="search_btn">
                         </div>
                     </form>
                 </div>
@@ -73,17 +118,36 @@
             
           </div><!--//page-header-->
         
-          {% block content %}
-          {% endblock %}
-          <footer>
-              <div class="container">
-                  <div class="row footer_row">
-                    <div class="justify-content-end align-items-center footer-email">
-                      <p id="address">Please Mail here :> asds238@gmail.com</p>
-                          </div><!--//docs-top-utilities-->
-                  </div>
-              </div>
+            <section class="page-section display-none" id="result_section">
+                <div class="container">
+                    <br>
+                    <button type="button" id="csvDownload" class="btn btn-primary" style="position:absolute; right:60px;">Save</button>
+                    <table id="result-table" class="table" style="margin-top:50px;">
+                        <thead>
+                            <tr>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows">
+                        </tbody> 
+                        </table>
+                </div>
+            </section>
+          <footer id="footer">
+            <div id="loading" class="wrap-loading display-none">
+                <img id="loading-image" src="{% static 'trademark_search/img/ajax-loader.gif' %}" alt="Loading..." />
+            
           </footer>
+
+            <!-- loading-->
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript"> 
+            $(window).load(function() { $('#loading').hide(); }); 
+            $('#search_patent').click(function(){ $('#loading').show();});
+        </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -93,5 +157,6 @@
         <!-- Core theme JS-->
         <script src="{%static 'trademark_search/js/scripts.js' %}"></script>
         <script src="{%static 'trademark_search/js/action.js' %}"></script>
+        <script src="{%static 'trademark_search/js/vienna_search.js' %}"></script>
     </body>
 </html>
