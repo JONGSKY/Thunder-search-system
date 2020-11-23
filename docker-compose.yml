@@ -5,7 +5,6 @@ services:
     container_name: db
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
     environment: 
       MYSQL_DATABASE: 'patent'
       # So you don't have to use root, but you can if you like
@@ -24,6 +23,7 @@ services:
     volumes:
       - ./mysql-data:/docker-entrypoint-initdb.d
 
+
   adminer:
     container_name: adminer
     image: adminer
@@ -39,6 +39,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
+      - ./app/images:/usr/src/app/images
     ports:
       - "8000:8000"
     env_file:
@@ -52,7 +53,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.6.1 #기본 이미지 사용
     container_name: elasticsearch
     environment:
-      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ES_JAVA_OPTS: "-Xmx1024m -Xms1024m"
       discovery.type: single-node #간단한 local 테스트를 위해 single-node로 구성
     volumes:
       - /usr/share/elasticsearch/data
@@ -65,7 +66,7 @@ services:
     container_name: logstash
     image: docker.elastic.co/logstash/logstash:7.6.1
     environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      LS_JAVA_OPTS: "-Xmx1024m -Xms1024m"
     volumes:
       # - ./logstash/config/logstash.yml:/logstash/config/logstash.yml
       - ./logstash:/config-dir

@@ -1,3 +1,6 @@
+# trademark image data
+app/images/
+
 # patent db
 mysql-data/patent_data.sql
 

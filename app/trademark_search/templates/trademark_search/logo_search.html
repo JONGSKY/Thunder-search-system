@@ -1,23 +1,59 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Thunder</title>
-        <!-- Favicon-->
-        <link rel="shortcut icon" href="{% static 'trademark_search/img/favicon.ico' %}" type="image/x-icon">
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{%static 'trademark_search/css/style.css' %}" rel="stylesheet"/>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Thunder</title>
+
+    <!-- <link rel="icon" type="image/png" href="http://example.com/myicon.png">  -->
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'trademark_search/img/favicon.ico' %}" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Load d3.js -->
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{%static 'trademark_search/css/style.css' %}" rel="stylesheet" />
+    <script src="{%static 'trademark_search/js/logo_search.js' %}"></script>
+
+    <style>
+        #loading { 
+            width: 100%; 
+            height: 100%; 
+            top: 0px; 
+            left: 0px; 
+            position: fixed; 
+            display: block; 
+            opacity: 0.7; 
+            background-color: #fff; 
+            z-index: 99; 
+            text-align: center; } 
+            
+        #loading-image { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            z-index: 100; }
+    </style>
+
     </head>
     <body id="page-top">
 
@@ -42,8 +78,8 @@
             <!-- <div class="theme-bg-shapes-right"></div>
             <div class="theme-bg-shapes-left"></div> -->
             <div class="container search-part">
-                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search">Logo-Search</span><span class="vienna-search" style="display:none">Vienna-Search</span></h1>
-                <div class="page-intro single-col-max mx-auto">Everything you need to get your software documentation online.</div>
+                <h1 class="page-heading single-col-max mx-auto"><span class="tm-search">Logo Search</span><span class="vienna-search" style="display:none">Vienna Search</span></h1>
+                <div class="page-intro single-col-max mx-auto">Help you with all of the trademark you want to find.</div>
                 <div class="main-search-box pt-3 d-block mx-auto">
                     <div class="radio-btn">
                         <label class="radio-inline">
@@ -57,45 +93,58 @@
                             <a href="{% url 'vienna_search' %}" class="convert">Vienna</a>
                         </label>
                     </div>
-                    <form class="main-menu" action="{% url 'logo_search_result' %}" method="post" enctype="multipart/form-data">
+                    <form class="main-menu"  id="image_form" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="">
-                            <div id="image_container">
-                                <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Drag and Drop your file here...</p>
-                            </div>
-
                             <div class="upload">
-                                <p class="upload-btn">File Upload</p>
-                                <input type="file" id="image" name="logo_search_image" accept="image/*" onchange="setThumbnail(event);">
+                                <div id="image_container">
+                                    <p id="image_container_text"><img src="{% static 'trademark_search/img/upload.png' %}" alt="upload"><br><br>Click here or Drag and Drop your file here...</p>
+                                </div>
+                                <input type="file" id="profile-image" class="image custom-file-input" name="image" onchange="setThumbnail(event);" required>
                             </div>
-                            <input type="submit" value="Search" class="search_btn">
+                            <br>
+  
+                            <input id="search_patent" type="submit" value="Search" class="search_btn"/>
                         </div>
-                    </form>
+                    </form>              
+
                 </div>
             </div>
-            
           </div><!--//page-header-->
         
-          {% block content %}
-          {% endblock %}
-          <footer>
-              <div class="container">
-                  <div class="row footer_row">
-                    <div class="justify-content-end align-items-center footer-email">
-                      <p id="address">Please Mail here :> asds238@gmail.com</p>
-                          </div><!--//docs-top-utilities-->
-                  </div>
-              </div>
+          <section class="page-section" id="result_section" style="display: none;">
+        <div class="container">
+            <br>
+            <div id='results' class="row">
+            </div>
+        </div>
+    </section>
+
+          <footer id="footer">
+            <div id="loading" class="wrap-loading display-none">
+                <img id="loading-image" src="{% static 'trademark_search/img/ajax-loader.gif' %}" alt="Loading..." />
+            </div>
+            <!-- <div><img src="{% static 'trademark_search/img/ajax-loader.gif' %}"/></div> -->
+
           </footer>
+
+                            <!-- loading-->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript"> 
+            $(window).load(function() { $('#loading').hide(); }); 
+            $('#search_patent').click(function(){ $('#loading').show();});
+        </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{%static 'trademark_search/js/scripts.js' %}"></script>
-        <script src="{%static 'trademark_search/js/action.js' %}"></script>
-        <script src="{%static 'trademark_search/js/logo_search.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{%static 'trademark_search/js/action.js' %}"></script>
+    <!-- <script src="{%static 'trademark_search/js/image_search.js' %}"></script> -->
+    
     </body>
+
 </html>

@@ -1,15 +1,15 @@
 #!/bin/sh
 
-if [ "$DATABASE" = "mysql" ]
-then
-    echo "Waiting for mysql..."
+# if [ "$DATABASE" = "mysql" ]
+# then
+#     echo "Waiting for mysql..."
 
-    while ! nc -z $SQL_HOST $SQL_PORT; do
-      sleep 1
-    done
+#     while ! nc -z $SQL_HOST $SQL_PORT; do
+#       sleep 1
+#     done
 
-    echo "MYSQL started"
-fi
+#     echo "MYSQL started"
+# fi
 
 python manage.py flush --no-input
 # python manage.py inspectdb > patent_search/models.py
