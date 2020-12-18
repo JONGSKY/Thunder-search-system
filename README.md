@@ -27,9 +27,7 @@
     <a href="https://www.notion.so/Thunder-Search-System-9a506f6218484044a12101888d212238"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a00e3328-cba9-4c2c-b251-3afb63a08561/Thunder.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201214T104035Z&X-Amz-Expires=86400&X-Amz-Signature=e1319e4eecdbfde0b97211384bdbf0781af1ddc7fb05b4787e18626271b9c546&X-Amz-SignedHeaders=host">View Web Demo</a>
-    ·
-    <a href="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bb3cd419-a7d6-442f-9ba7-2fe47acc702c/mobile.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201214T104035Z&X-Amz-Expires=86400&X-Amz-Signature=70ccb0ba1a148bc6b832484e1ee3bfd2e34d4eca1f2e95e7cd752e8f5e286b0e&X-Amz-SignedHeaders=host">View Mobile Demo</a>
+    <a href="https://youtu.be/IRLWoxgcelE">View introduce Thunder Project</a>
   </p>
 </p>
 
@@ -120,7 +118,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Download SQL data file and Image data file at [https://download.com](https://download.com)
+1. Download [SQL data file](((https://drive.google.com/file/d/16iH2aBda0QdA-KQ-O1o9BBg0g4Oo7oPN/view?usp=sharing))) and [Image data file](https://drive.google.com/file/d/1XTd3EYGwZAEDN7biVAZMS0oLt_UxCHej/view?usp=sharing) at google drive.
 2. Clone the repo
    ```sh
    git clone https://github.com/JONGSKY/Thunder-search-system.git
