@@ -118,7 +118,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Download [SQL data file](((https://drive.google.com/file/d/16iH2aBda0QdA-KQ-O1o9BBg0g4Oo7oPN/view?usp=sharing))) and [Image data file](https://drive.google.com/file/d/1XTd3EYGwZAEDN7biVAZMS0oLt_UxCHej/view?usp=sharing) at google drive.
+1. Download [SQL data file](https://drive.google.com/file/d/16iH2aBda0QdA-KQ-O1o9BBg0g4Oo7oPN/view?usp=sharing) and [Image data file](https://drive.google.com/file/d/1XTd3EYGwZAEDN7biVAZMS0oLt_UxCHej/view?usp=sharing) at google drive.
 2. Clone the repo
    ```sh
    git clone https://github.com/JONGSKY/Thunder-search-system.git
